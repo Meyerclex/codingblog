@@ -30,14 +30,10 @@ tags:
 > 注意：我基本没有什么计算机基础，以下内容不保真！有疑问的话建议去原作者的仓库底下提Issue :D
 
 ## 你需要有些什么
-1. 
+1. Github账号
 2.  [Go](https://golang.org/doc/install) 环境(>= 1.16) 。（这个东西我都不知道我为什么会有）
-
-## Install `hugo-obsidian`
-
-](http://localhost:1313/notes/preview-changes/#install-hugo-obsidian)
-
-This step will generate the list of backlinks for Hugo to parse. Ensure you have [Go](https://golang.org/doc/install) (>= 1.16) installed.）
+3. [Hugo](https://gohugo.io/getting-started/installing/)
+4. Make工具。因为我也缺少这个所以后文有关于它的安装与配置。
 ## 那么就开始吧！
 基本上只需要跟着作者的Setup一步步走下来。
 1. Fork作者的仓库： [Quartz Repository](https://github.com/jackyzha0/quartz)
@@ -76,3 +72,10 @@ go install: github.com/jackyzha0/hugo-obsidian@latest: module github.com/jackyzh
 ```
 解决办法：
 执行命令`go env -w GOPROXY=https://goproxy.cn`
+
+### 安装Hugo
+1. [Install Hugo | Hugo](https://gohugo.io/getting-started/installing/)
+2. 进入文件夹``
+```
+make serve
+```
