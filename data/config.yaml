@@ -1,4 +1,4 @@
-name: Jacky Zhao
+name: Lyin
 enableToc: true
 openToc: false
 enableLinkPreview: true
@@ -9,18 +9,16 @@ enableCallouts: true
 enableSPA: true
 enableFooter: true
 enableContextualBacklinks: true
-enableRecentNotes: false
-enableGitHubEdit: true
-GitHubLink: https://github.com/jackyzha0/quartz/tree/hugo/content
+enableRecentNotes: true
+enableGitHubEdit: false
+GitHubLink: 
 enableSemanticSearch: false
 operandApiKey: "REPLACE-WITH-YOUR-OPERAND-API-KEY"
-description:
-  Host your second brain and digital garden for free. Quartz features extremely fast full-text search,
-  Wikilink support, backlinks, local graph, tags, and link previews.
+description: 
 page_title:
-  "🪴 Quartz 3.2"
+  "💚 Lyin's Tech Note"
 links:
-  - link_name: Twitter
-    link: https://twitter.com/_jzhao
-  - link_name: Github
+  - link_name: Thanks for All the fishes :)
+    link: https://gregueria.icu
+  - link_name: Lyin's Notes
     link: https://github.com/jackyzha0
