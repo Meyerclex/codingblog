@@ -87,4 +87,5 @@ make serve
 	3. 确认上述步骤无误，如果此时执行命令行`make serve`仍显示`不是内部或外部命令`的话，将`MinGW\bin`下的`mingw32-make.exe`重命名为 `make.exe`。
 6. 执行命令行后，博客生成成功，访问`http://localhost:1313/`本地预览。
 
-### 关于写作
+### 发布你的页面
+
