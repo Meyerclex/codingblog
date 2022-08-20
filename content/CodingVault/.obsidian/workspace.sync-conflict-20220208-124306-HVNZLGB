@@ -1,0 +1,144 @@
+{
+  "main": {
+    "id": "cb14105deb880c3b",
+    "type": "split",
+    "children": [
+      {
+        "id": "77026e959e9b9269",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "Index.md",
+            "mode": "preview"
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "d159130d5d307605",
+    "type": "mobile-drawer",
+    "children": [
+      {
+        "id": "d578ef021d8456d0",
+        "type": "leaf",
+        "state": {
+          "type": "file-explorer",
+          "state": {}
+        }
+      },
+      {
+        "id": "52449e927de7d3b3",
+        "type": "leaf",
+        "state": {
+          "type": "search",
+          "state": {
+            "query": "",
+            "matchingCase": false,
+            "explainSearch": false,
+            "collapseAll": false,
+            "extraContext": false,
+            "sortOrder": "alphabetical"
+          }
+        }
+      },
+      {
+        "id": "b7391a6e666189e1",
+        "type": "leaf",
+        "state": {
+          "type": "tag",
+          "state": {
+            "sortOrder": "frequency",
+            "useHierarchy": true
+          }
+        }
+      },
+      {
+        "id": "b9dfa80142306299",
+        "type": "leaf",
+        "state": {
+          "type": "starred",
+          "state": {}
+        }
+      }
+    ],
+    "currentTab": 0
+  },
+  "right": {
+    "id": "10bd0f480eaa7d3a",
+    "type": "mobile-drawer",
+    "children": [
+      {
+        "id": "523042ce00574aa9",
+        "type": "leaf",
+        "state": {
+          "type": "calendar",
+          "state": {}
+        }
+      },
+      {
+        "id": "6ea608a2a95997de",
+        "type": "leaf",
+        "state": {
+          "type": "reminder-list",
+          "state": {}
+        }
+      },
+      {
+        "id": "78e14280b57f2aad",
+        "type": "leaf",
+        "state": {
+          "type": "backlink",
+          "state": {
+            "file": "Index.md",
+            "collapseAll": false,
+            "extraContext": false,
+            "sortOrder": "alphabetical",
+            "showSearch": false,
+            "searchQuery": "",
+            "backlinkCollapsed": false,
+            "unlinkedCollapsed": true
+          }
+        }
+      },
+      {
+        "id": "27a85a618b6f69fa",
+        "type": "leaf",
+        "state": {
+          "type": "outgoing-link",
+          "state": {
+            "file": "Index.md",
+            "linksCollapsed": false,
+            "unlinkedCollapsed": true
+          }
+        }
+      },
+      {
+        "id": "b0ad2c9b4c1a673c",
+        "type": "leaf",
+        "state": {
+          "type": "outline",
+          "state": {
+            "file": "Index.md"
+          }
+        }
+      }
+    ],
+    "currentTab": 0
+  },
+  "active": "77026e959e9b9269",
+  "lastOpenFiles": [
+    "Index.md",
+    "🎉🎉🎉.md",
+    "✅杂锦/✅杂锦.md",
+    "未命名 1234.md",
+    "未命名.md",
+    "测试.md",
+    "新建笔记/Teset.md",
+    "新建笔记/Git test.md",
+    "Pages/Pages.md",
+    "📚学习/📚学习.md"
+  ]
+}

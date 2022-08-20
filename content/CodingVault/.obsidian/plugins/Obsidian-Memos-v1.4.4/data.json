@@ -1,0 +1,14 @@
+{
+  "StartDate": "Sunday",
+  "InsertAfter": "## Notes",
+  "UserName": "Gregueria",
+  "ProcessEntriesBelow": "## Notes",
+  "Language": "zh",
+  "SaveMemoButtonLabel": "NOTEIT",
+  "DefaultPrefix": "List",
+  "InsertDateFormat": "Tasks",
+  "DefaultEditorLocation": "Bottom",
+  "UseButtonToShowEditor": true,
+  "FocusOnEditor": true,
+  "OpenDailyMemosWithMemos": true
+}

@@ -1,0 +1,169 @@
+{
+  "main": {
+    "id": "cb14105deb880c3b",
+    "type": "split",
+    "children": [
+      {
+        "id": "f763f451b3f57bdd",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "新建笔记/Teset.md",
+            "mode": "preview",
+            "backlinks": true,
+            "source": false
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "6aa9f257fab7b235",
+    "type": "split",
+    "children": [
+      {
+        "id": "72fac05835fa3c81",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "eb699e3d03a29f76",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "deea9b1486c924e6",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "comment",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "e1730694e7d999c1",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 232
+  },
+  "right": {
+    "id": "dec7b127e29b4cd3",
+    "type": "split",
+    "children": [
+      {
+        "id": "da7f6e405c2efdc4",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c36719ae84b3f906",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {}
+            }
+          },
+          {
+            "id": "394033f7d4680afe",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "新建笔记/Teset.md"
+              }
+            }
+          },
+          {
+            "id": "9cd1f24161735428",
+            "type": "leaf",
+            "state": {
+              "type": "reminder-list",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 2
+      },
+      {
+        "id": "6a7aa3662a6796b9",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "12adc77e4ea55890",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "新建笔记/Teset.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "eed7c0ccac2d2a98",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "新建笔记/Teset.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "f618352f423bfc11",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          }
+        ],
+        "currentTab": 2
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "f763f451b3f57bdd",
+  "lastOpenFiles": [
+    "新建笔记/Teset.md",
+    "新建笔记/Git test.md",
+    "✅杂锦/✅杂锦.md",
+    "Index.md",
+    "未命名.md",
+    "Pages/Pages.md",
+    "📚学习/📚学习.md",
+    "网页摘选/网页摘选.md",
+    "阅读/阅读.md",
+    "Journals/Journals.md"
+  ]
+}

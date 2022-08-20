@@ -1,0 +1,163 @@
+{
+  "workspaces": {
+    "日常": {
+      "main": {
+        "id": "cb14105deb880c3b",
+        "type": "split",
+        "children": [
+          {
+            "id": "a91fffa7736b94f8",
+            "type": "leaf",
+            "dimension": 26.27551020408163,
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Journals/2022-01-24.md",
+                "mode": "source",
+                "backlinks": false,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "cfa8b20cb7f95b0b",
+            "type": "leaf",
+            "dimension": 34.2687074829932,
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Day Planners/Day Planner-20220124.md",
+                "mode": "preview",
+                "backlinks": false,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "d5ad3d3d2596b9da",
+            "type": "leaf",
+            "dimension": 39.455782312925166,
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Day Planners/Day Planner-20220124.md",
+                "mode": "preview",
+                "backlinks": false,
+                "source": false
+              }
+            }
+          }
+        ],
+        "direction": "vertical"
+      },
+      "left": {
+        "id": "6aa9f257fab7b235",
+        "type": "split",
+        "children": [
+          {
+            "id": "72fac05835fa3c81",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "9d20b551e449fd09",
+                "type": "leaf",
+                "state": {
+                  "type": "recent-files",
+                  "state": {}
+                }
+              },
+              {
+                "id": "eb699e3d03a29f76",
+                "type": "leaf",
+                "state": {
+                  "type": "file-explorer",
+                  "state": {}
+                }
+              },
+              {
+                "id": "deea9b1486c924e6",
+                "type": "leaf",
+                "state": {
+                  "type": "search",
+                  "state": {
+                    "query": "马尔克斯",
+                    "matchingCase": false,
+                    "explainSearch": true,
+                    "collapseAll": true,
+                    "extraContext": false,
+                    "sortOrder": "alphabetical"
+                  }
+                }
+              },
+              {
+                "id": "e1730694e7d999c1",
+                "type": "leaf",
+                "state": {
+                  "type": "starred",
+                  "state": {}
+                }
+              }
+            ],
+            "currentTab": 1
+          }
+        ],
+        "direction": "horizontal",
+        "width": 232,
+        "collapsed": true
+      },
+      "right": {
+        "id": "dec7b127e29b4cd3",
+        "type": "split",
+        "children": [
+          {
+            "id": "da7f6e405c2efdc4",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "c36719ae84b3f906",
+                "type": "leaf",
+                "state": {
+                  "type": "calendar",
+                  "state": {}
+                }
+              },
+              {
+                "id": "f618352f423bfc11",
+                "type": "leaf",
+                "state": {
+                  "type": "tag",
+                  "state": {
+                    "sortOrder": "frequency",
+                    "useHierarchy": true
+                  }
+                }
+              },
+              {
+                "id": "394033f7d4680afe",
+                "type": "leaf",
+                "state": {
+                  "type": "outline",
+                  "state": {
+                    "file": "Journals/2022-01-24.md"
+                  }
+                }
+              },
+              {
+                "id": "3a24752adf1c1107",
+                "type": "leaf",
+                "state": {
+                  "type": "timeline",
+                  "state": {}
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "horizontal",
+        "width": 300
+      },
+      "active": "a91fffa7736b94f8"
+    }
+  },
+  "active": "日常"
+}

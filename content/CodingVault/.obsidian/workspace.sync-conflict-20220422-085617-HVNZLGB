@@ -1,0 +1,146 @@
+{
+  "main": {
+    "id": "08692dcd3c6882d6",
+    "type": "split",
+    "children": [
+      {
+        "id": "aaec8502a181dbd6",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "📚学习/QCA.md",
+            "mode": "preview",
+            "backlinks": true,
+            "source": false
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "ced7d834204e35dd",
+    "type": "mobile-drawer",
+    "children": [
+      {
+        "id": "9be221ef33cd63ff",
+        "type": "leaf",
+        "state": {
+          "type": "file-explorer",
+          "state": {}
+        }
+      },
+      {
+        "id": "f25c814fc780fa6e",
+        "type": "leaf",
+        "state": {
+          "type": "search",
+          "state": {
+            "query": "",
+            "matchingCase": false,
+            "explainSearch": false,
+            "collapseAll": false,
+            "extraContext": false,
+            "sortOrder": "alphabetical"
+          }
+        }
+      },
+      {
+        "id": "2095b8bb499b668e",
+        "type": "leaf",
+        "state": {
+          "type": "tag",
+          "state": {
+            "sortOrder": "frequency",
+            "useHierarchy": true
+          }
+        }
+      },
+      {
+        "id": "513f9cb4a1783961",
+        "type": "leaf",
+        "state": {
+          "type": "starred",
+          "state": {}
+        }
+      }
+    ],
+    "currentTab": 0
+  },
+  "right": {
+    "id": "36b5a8e8bab35500",
+    "type": "mobile-drawer",
+    "children": [
+      {
+        "id": "f9fe5c715af861d0",
+        "type": "leaf",
+        "state": {
+          "type": "calendar",
+          "state": {}
+        }
+      },
+      {
+        "id": "49e460f626ee8f6b",
+        "type": "leaf",
+        "state": {
+          "type": "reminder-list",
+          "state": {}
+        }
+      },
+      {
+        "id": "4ad37b32fa72e58f",
+        "type": "leaf",
+        "state": {
+          "type": "backlink",
+          "state": {
+            "file": "📚学习/QCA.md",
+            "collapseAll": false,
+            "extraContext": false,
+            "sortOrder": "alphabetical",
+            "showSearch": false,
+            "searchQuery": "",
+            "backlinkCollapsed": false,
+            "unlinkedCollapsed": true
+          }
+        }
+      },
+      {
+        "id": "c2cfca58efcabc0c",
+        "type": "leaf",
+        "state": {
+          "type": "outgoing-link",
+          "state": {
+            "file": "📚学习/QCA.md",
+            "linksCollapsed": false,
+            "unlinkedCollapsed": true
+          }
+        }
+      },
+      {
+        "id": "034aea2661eadd7b",
+        "type": "leaf",
+        "state": {
+          "type": "outline",
+          "state": {
+            "file": "📚学习/QCA.md"
+          }
+        }
+      }
+    ],
+    "currentTab": 0
+  },
+  "active": "aaec8502a181dbd6",
+  "lastOpenFiles": [
+    "📚学习/QCA.md",
+    "📚学习/🌞雅思学习/雅思备考视频.md",
+    "Habits.md",
+    "Laud.md",
+    "impact.md",
+    "📚学习/🌞雅思学习/未命名.md",
+    "✅杂锦/💦附件/IELTS/卡洛林-雅思写作视频资料合辑/小作文 各图表句式.pdf",
+    "✅杂锦/💦附件/IELTS/卡洛林-雅思写作视频资料合辑/Simon - Ideas for IELTS Topics (Updated).pdf",
+    "✅杂锦/💦附件/IELTS/卡洛林-雅思写作视频资料合辑/大作文 6种句型.pdf",
+    "✅杂锦/💦附件/IELTS/卡洛林-雅思写作视频资料合辑/雅思写作mind map.png"
+  ]
+}

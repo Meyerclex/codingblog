@@ -1,0 +1,33 @@
+{
+  "promptDelete": false,
+  "fileSortOrder": "byCreatedTime",
+  "foldHeading": true,
+  "showLineNumber": false,
+  "trashOption": "local",
+  "spellcheck": true,
+  "defaultViewMode": "preview",
+  "showFrontmatter": true,
+  "newFileLocation": "folder",
+  "attachmentFolderPath": "✅杂锦/💦附件",
+  "newFileFolderPath": "新建笔记",
+  "pdfExportSettings": {
+    "pageSize": "A5",
+    "landscape": false,
+    "margin": "2",
+    "downscalePercent": 100
+  },
+  "legacyEditor": false,
+  "livePreview": true,
+  "autoPairBrackets": true,
+  "readableLineLength": false,
+  "foldIndent": true,
+  "alwaysUpdateLinks": true,
+  "communityThemeSortOrder": "download",
+  "showUnsupportedFiles": true,
+  "communityPluginSortOrder": "download",
+  "spellcheckLanguages": [
+    "zh-CN",
+    "en-US"
+  ],
+  "vimMode": false
+}

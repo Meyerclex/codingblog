@@ -1,0 +1,169 @@
+{
+  "main": {
+    "id": "da88737d9e531d0c",
+    "type": "split",
+    "children": [
+      {
+        "id": "4043a12e84e10950",
+        "type": "leaf",
+        "state": {
+          "type": "empty",
+          "state": {}
+        }
+      },
+      {
+        "id": "2d61de1438560f84",
+        "type": "leaf",
+        "state": {
+          "type": "empty",
+          "state": {}
+        }
+      },
+      {
+        "id": "4d67d6a83a43f0fc",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "📕日记/2021-12-23.md",
+            "mode": "preview",
+            "backlinks": false,
+            "source": false
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "11c2b28ca781df30",
+    "type": "split",
+    "children": [
+      {
+        "id": "5d9d2ad4e87f7b43",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "5ebf0f162e51f8bc",
+            "type": "leaf",
+            "state": {
+              "type": "recent-files",
+              "state": {}
+            }
+          },
+          {
+            "id": "b60d758426edf48f",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "e0e012f2225d08bf",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "2d6312fb408dc562",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "1044084107ebb448",
+    "type": "split",
+    "children": [
+      {
+        "id": "dd65a67821855784",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7df1b64e0b805b9c",
+            "type": "leaf",
+            "state": {
+              "type": "todo",
+              "state": {}
+            }
+          },
+          {
+            "id": "52e811c7e92b099e",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {}
+            }
+          },
+          {
+            "id": "27fb990bfe47658e",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "📕日记/2021-12-23.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "353e007710bde261",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "e50cd78cf200e2f4",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "📕日记/2021-12-23.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "4d67d6a83a43f0fc",
+  "lastOpenFiles": [
+    "📕日记/2021-12-23.md",
+    "📕日记/2021-12-27.md",
+    "📕日记/2021-12-28.md",
+    "📕日记/2021-12-29.md",
+    "Note - 写作/绝境写作计划.md",
+    "Note - 写作/写作 - 浑然天成的绝句.md",
+    "Note - 写作/写作 - 妙手偶得.md",
+    "Note - 写作/写作集锦.md",
+    "Note - 写作/TSN写作List.md",
+    "阅读/《海边的房间》.md"
+  ]
+}
