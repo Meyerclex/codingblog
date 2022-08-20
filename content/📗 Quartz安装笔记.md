@@ -75,7 +75,13 @@ go install: github.com/jackyzha0/hugo-obsidian@latest: module github.com/jackyzh
 
 ### 安装Hugo
 1. [Install Hugo | Hugo](https://gohugo.io/getting-started/installing/)
-2. 进入文件夹``
+2. 运行命令行：
 ```
+cd <quartz文件夹地址>
 make serve
 ```
+如果此时显示`'make'不是内部或外部命令，也不是可运行的程序 或批处理文件`，那么就需要安装工具make。
+
+请先按照[MinGW下载和安装教程](http://c.biancheng.net/view/8077.html)，逐步安装完毕并配置好PATH环境变量。
+
+关于环境变量的配置（上文），请不要仅
