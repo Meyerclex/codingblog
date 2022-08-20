@@ -81,6 +81,9 @@ cd <quartz文件夹地址>
 make serve
 ```
 3. 如果此时显示`'make'不是内部或外部命令，也不是可运行的程序 或批处理文件`，那么就需要安装工具make。
-4. 请先按照[MinGW下载和安装教程](http://c.biancheng.net/view/8077.html)，逐步安装完毕并配置好PATH环境变量。
-	1. 关于环境变量的配置（上文链接的第6步），请不要仅安装在当前的用户变量中，而是安装在**系统变量**中。
-5. 参照[Fetching Title#l24w](https://blog.csdn.net/qq_49641239/article/details/121517925)
+4. 参照[make不是内部或外部命令，也不是可运行的程序或批处理文件解决方案](https://blog.csdn.net/qq_49641239/article/details/121517925)，逐步安装完毕并配置好PATH环境变量。
+	1. 关于环境变量的配置（上文链接的Step 2），请不要仅安装在当前的用户变量中，而是安装在**系统变量**中。
+	2. 假如对安装有疑惑的话可以参考：[MinGW下载和安装教程](http://c.biancheng.net/view/8077.html)的前六步。
+5. 如果此时执行命令行`make serve`仍显示`不是内部或外部命令`，将`MinGW\bin`下的`mingw32-make.exe`重命名为 `make.exe`。
+执行命令行
+
