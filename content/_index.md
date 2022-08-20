@@ -1,26 +1,44 @@
 ---
-title: 🪴 Quartz 3.2
+title: 💚Lyin's Tech Note
 ---
+## 🖋️JavaScript
+1. [[🐺The complete JavaScript Course 2022]]
+2. [[Function 函数]]
+3. [[Array 数组]]
+4. [[Object]]
+5. [[Loop 循环]]
+## 📒HTML5 + CSS3 
+1. [[HTML5 基础]]
+2. [[Note]]
+3. [[✅前端Tips P1-200]]
+4. [[文件路径的一些通用规则]]
+5. [[前端学习 P1-200]]
+6. [[H5(Html5)+CSS3：P200-P275]]
+7. [[H5(Html5)+CSS3：P275-]]
 
-Host your second brain and [digital garden](https://jzhao.xyz/posts/networked-thought) for free. Quartz features
+## 📃参考
+1. [[文科零基础转码校招经验分享帖.pdf]]
+2. [[国内脱产4个月成功转码上岸经历 – 夏 诤.pdf]]
 
-1. Extremely fast natural-language [[notes/search|search]]
-2. Customizable and hackable design based on [Hugo](https://gohugo.io/)
-3. Automatically generated backlinks, link previews, and local graph
-4. Built-in [[notes/CJK + Latex Support (测试) | CJK + Latex Support]] and [[notes/callouts | Admonition-style callouts]]
-5. Support for both Markdown Links and Wikilinks
 
-Check out some of the [amazing gardens that community members](notes/showcase.md) have published with Quartz or read about [why I made Quartz](notes/philosophy.md) to begin with.
-
-## Get Started
-> 📚 Step 1: [Setup your own digital garden using Quartz](notes/setup.md)
-
-Returning user? Figure out how to [[notes/updating|update]] your existing Quartz garden.
-
-If you prefer browsing the contents of this site through a list instead of a graph, you see a list of all [setup-related notes](/tags/setup).
-
-### Troubleshooting
-- 🚧 [Troubleshooting and FAQ](notes/troubleshooting.md)
-- 🐛 [Submit an Issue](https://github.com/jackyzha0/quartz/issues)
-- 👀 [Discord Community](https://discord.gg/cRFFHYye7t)
-
+## JS 视频目录及To Do List
+- [x] 变量：P11～19  
+- [x] 数据类型：P20～40  
+- [x] 运算符：P41～54  
+- [ ] 流程控制分支结构：P55～68  
+- [x] 循环：P69～95  
+- [x] 数组：P96～112  
+- [ ] 函数：P113～133  
+- [ ] 作用域：P134～139  
+- [ ] JS预解析：P140～142  
+- [x] 对象：P143～153  
+- [ ] 内置对象：P155～186  
+- [ ] 简单数据类型和复杂数据类型：P187～190  
+- [ ] DOM：P194～265  
+- [ ] 事件高级：P247～265  
+- [ ] BOM：P266～286  
+- [ ] PC端网页特效：P287～329  
+- [ ] 移动端网页特效：P331～353  
+- [ ] 本地存储：P354～357  
+- [ ] jQuery：P358～442  
+- [ ] 数据可视化：P443～473
