@@ -38,9 +38,14 @@ git clone https://github.com/YOUR-USERNAME/quartz
 ```
 于是此时你已经有了一个`quartz`文件夹了。
 
-你所有的内容都可以在`/content`中找到，里面默认有`notes`、`private`、`templates`三个文件夹，顾名思义分别存放笔记、隐私笔记（不显示）、模板文件夹。
+你所有的内容都可以在`/content`中找到。里面默认有`notes`、`private`、`templates`三个文件夹，顾名思义分别存放笔记、隐私笔记（不显示）、模板文件夹。
+
+但是你的笔记并不一定需要放在`/content/notes`中，完全可以放在`/content`下。
 
 同时里面还有`_index.md`文件，它里面的内容直接展现为播客主页。
 
 ### Obsidian配置
 1. 新建一个笔记库，或者直接将你的笔记库移动到`/content`文件夹。
+	1. 但假设这么做了，文件夹层级目录则为`/content/Vault`，你可以用Obsidian在里面新建、修改笔记。
+	2. 那么此时就涉及一个问题，可是`_index.md`文件是放在`/content`目录中的，这意味着你在Obsidian中见不到它。
+	3. 可是按照我的笔记使用逻辑，我希望博客主页(`index.md`)直接作为我的笔记索引页（M），如果它不能在Obsidian里修改。
