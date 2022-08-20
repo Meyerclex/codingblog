@@ -30,3 +30,11 @@ tags:
 > 注意：我基本没有什么计算机基础，以下内容不保真！有疑问的话建议去原作者的仓库底下提Issue :D
 
 ## 那么就开始吧！
+基本上只需要跟着作者的Setup一步步走下来。
+1. Fork作者的仓库： [Quartz Repository](https://github.com/jackyzha0/quartz)
+2. Clone仓库到本地，可以用Github Desktop也可以敲命令行：
+```shell
+git clone https://github.com/YOUR-USERNAME/quartz
+```
+此时你已经有了一个`quartz`文件夹了。
+你所有的内容都可以在`/content`中找到，里面默认有
