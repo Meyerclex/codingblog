@@ -1,0 +1,173 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=description content="Tips  crtl + / 注释 cellpadding=&ldquo;10&#34;单元格边缘和文字之间的距离，cellspacing=&ldquo;0&#34;单元格与单元格之间的空隙  自定义列表，与（定义项目/名字）、（描述每一个项目/名字）一起使用  CSS内容写在head标签里加一个style标签 对body进行选择，background-color整体页面的颜色，color是文字部分的颜色 CSS基础选择器  标签选择器 类选择器 .class，类选择器：样式点定义，结构类调用，一个或多个，开发最常用。不能用标签名字比如.div作为类名  使用多个类名用空格隔开   id选择器，用井号#来定义，结构id调用，**只能调用一次，别人切勿使用。**和Class的区别类似名字和身份证，可以重名但不会有重复的身份证。ID选择器一般用于JS，CSS一般使用类选择器。 通配符选择器，星号*，选择所有标签   符合属性的写法，font: font-style font-weitgh font-size/line-height font-family; 不能换顺序 开发中最常用的是十六进制颜色 em是一个相对单位，就是当前元素（font-size）1个文字的大小，如果当前元素没有设置大小，就会按照父元素的一个文字大小 CSS引入方式  CSS三种样式表  行内样式表（行内式）  直接在标签内写一个style属性   内部样式表（嵌入式）  可以放在HTML文档中的任何地方，但一般写在之中 通过这种方式可以方便控制整个页面中的元素样式设置 代码结构清晰，但是并没有实现结构与样式的完全分离   外部样式表（链接式）  <link rel=&#34;stylesheet&#34; href=&#34;styles/style."><title>H5C3 Tips P1-200</title><meta name=viewport content="width=device-width,initial-scale=1"><link rel="shortcut icon" type=image/png href=https://code.gregueria.icu//icon.png><link href=https://code.gregueria.icu/styles.d2f738589684858118a26e4c88e3fef5.min.css rel=stylesheet><link href=https://code.gregueria.icu/styles/_light_syntax.86a48a52faebeaaf42158b72922b1c90.min.css rel=stylesheet id=theme-link><script src=https://code.gregueria.icu/js/darkmode.e007d540d8dc97cb9252d8d222a8dafc.min.js></script>
+<script src=https://code.gregueria.icu/js/util.9825137f5e7825e8553c68ce39ac9e44.min.js></script>
+<link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css integrity=sha384-R4558gYOUz8mP9YWpZJjofhk+zx0AS11p36HnD2ZKj/6JR5z27gSSULCNHIRReVs crossorigin=anonymous><script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js integrity=sha384-z1fJDqw8ZApjGO3/unPWUPsIymfsJmyrDVWC8Tv/a1HeOtGmkwNd/7xUS0Xcnvsx crossorigin=anonymous></script>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/auto-render.min.js integrity=sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR crossorigin=anonymous></script>
+<script src=https://unpkg.com/@floating-ui/core@0.7.3></script>
+<script src=https://unpkg.com/@floating-ui/dom@0.5.4></script>
+<script src=https://code.gregueria.icu/js/popover.37b1455b8f0603154072b9467132c659.min.js></script>
+<script src=https://code.gregueria.icu/js/code-title.b35124ad8db0ba37162b886afb711cbc.min.js></script>
+<script src=https://code.gregueria.icu/js/clipboard.c20857734e53a3fb733b7443879efa61.min.js></script>
+<script src=https://code.gregueria.icu/js/callouts.7723cac461d613d118ee8bb8216b9838.min.js></script>
+<script>const BASE_URL="https://code.gregueria.icu/",fetchData=Promise.all([fetch("https://code.gregueria.icu/indices/linkIndex.512d257221473db785f0a6c01b80cbdf.min.json").then(e=>e.json()).then(e=>({index:e.index,links:e.links})),fetch("https://code.gregueria.icu/indices/contentIndex.2e0b1557fa721502c2e57e485392036d.min.json").then(e=>e.json())]).then(([{index:e,links:t},n])=>({index:e,links:t,content:n})),render=()=>{const e=new URL(BASE_URL),t=e.pathname,n=window.location.pathname,s=t==n;addCopyButtons(),addTitleToCodeBlocks(),addCollapsibleCallouts(),initPopover("https://code.gregueria.icu",!0,!0);const o=document.getElementById("footer");if(o){const e=document.getElementById("graph-container");if(!e)return requestAnimationFrame(render);e.textContent="";const t=s&&!1;drawGraph("https://code.gregueria.icu",t,[{"/moc":"#4388cc"}],t?{centerForce:1,depth:-1,enableDrag:!0,enableLegend:!1,enableZoom:!0,fontSize:.5,linkDistance:1,opacityScale:3,repelForce:1,scale:1.4}:{centerForce:1,depth:1,enableDrag:!0,enableLegend:!1,enableZoom:!0,fontSize:.6,linkDistance:1,opacityScale:3,repelForce:2,scale:1.2})}},init=(e=document)=>{addCopyButtons(),addTitleToCodeBlocks(),renderMathInElement(e.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1}],throwOnError:!1})}</script><script type=module>
+    import { attachSPARouting } from "https:\/\/code.gregueria.icu\/js\/router.9d4974281069e9ebb189f642ae1e3ca2.min.js"
+    attachSPARouting(init, render)
+  </script></head><script async src="https://www.googletagmanager.com/gtag/js?id=G-XYFD95KB4J"></script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-XYFD95KB4J",{anonymize_ip:!1})}</script><body><div id=search-container><div id=search-space><input autocomplete=off id=search-bar name=search type=text aria-label=Search placeholder="Search for something..."><div id=results-container></div></div></div><script src=https://cdn.jsdelivr.net/npm/flexsearch@0.7.21/dist/flexsearch.bundle.js integrity="sha256-i3A0NZGkhsKjVMzFxv3ksk0DZh3aXqu0l49Bbh0MdjE=" crossorigin=anonymous defer></script>
+<script defer src=https://code.gregueria.icu/js/full-text-search.24827f874defbbc6d529926cbfcfb493.min.js></script><div class=singlePage><header><h1 id=page-title><a href=https://code.gregueria.icu/>🖼️ Lyin's Tech Note</a></h1><div class=spacer></div><div id=search-icon><p>Search</p><svg tabindex="0" aria-labelledby="title desc" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title id="title">Search Icon</title><desc id="desc">Icon to open search</desc><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"/><circle cx="8" cy="8" r="7"/></g></svg></div><div class=darkmode><input class=toggle id=darkmode-toggle type=checkbox tabindex=-1>
+<label id=toggle-label-light for=darkmode-toggle tabindex=-1><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="dayIcon" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35"><title>Light Mode</title><path d="M6 17.5C6 16.672 5.328 16 4.5 16h-3C.672 16 0 16.672.0 17.5S.672 19 1.5 19h3C5.328 19 6 18.328 6 17.5zM7.5 26c-.414.0-.789.168-1.061.439l-2 2C4.168 28.711 4 29.086 4 29.5 4 30.328 4.671 31 5.5 31c.414.0.789-.168 1.06-.44l2-2C8.832 28.289 9 27.914 9 27.5 9 26.672 8.329 26 7.5 26zm10-20C18.329 6 19 5.328 19 4.5v-3C19 .672 18.329.0 17.5.0S16 .672 16 1.5v3C16 5.328 16.671 6 17.5 6zm10 3c.414.0.789-.168 1.06-.439l2-2C30.832 6.289 31 5.914 31 5.5 31 4.672 30.329 4 29.5 4c-.414.0-.789.168-1.061.44l-2 2C26.168 6.711 26 7.086 26 7.5 26 8.328 26.671 9 27.5 9zM6.439 8.561C6.711 8.832 7.086 9 7.5 9 8.328 9 9 8.328 9 7.5c0-.414-.168-.789-.439-1.061l-2-2C6.289 4.168 5.914 4 5.5 4 4.672 4 4 4.672 4 5.5c0 .414.168.789.439 1.06l2 2.001zM33.5 16h-3c-.828.0-1.5.672-1.5 1.5s.672 1.5 1.5 1.5h3c.828.0 1.5-.672 1.5-1.5S34.328 16 33.5 16zM28.561 26.439C28.289 26.168 27.914 26 27.5 26c-.828.0-1.5.672-1.5 1.5.0.414.168.789.439 1.06l2 2C28.711 30.832 29.086 31 29.5 31c.828.0 1.5-.672 1.5-1.5.0-.414-.168-.789-.439-1.061l-2-2zM17.5 29c-.829.0-1.5.672-1.5 1.5v3c0 .828.671 1.5 1.5 1.5s1.5-.672 1.5-1.5v-3C19 29.672 18.329 29 17.5 29zm0-22C11.71 7 7 11.71 7 17.5S11.71 28 17.5 28 28 23.29 28 17.5 23.29 7 17.5 7zm0 18c-4.136.0-7.5-3.364-7.5-7.5s3.364-7.5 7.5-7.5 7.5 3.364 7.5 7.5S21.636 25 17.5 25z"/></svg></label><label id=toggle-label-dark for=darkmode-toggle tabindex=-1><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="nightIcon" viewBox="0 0 100 100" style="enable-background='new 0 0 100 100'"><title>Dark Mode</title><path d="M96.76 66.458c-.853-.852-2.15-1.064-3.23-.534-6.063 2.991-12.858 4.571-19.655 4.571C62.022 70.495 50.88 65.88 42.5 57.5 29.043 44.043 25.658 23.536 34.076 6.47c.532-1.08.318-2.379-.534-3.23-.851-.852-2.15-1.064-3.23-.534-4.918 2.427-9.375 5.619-13.246 9.491-9.447 9.447-14.65 22.008-14.65 35.369.0 13.36 5.203 25.921 14.65 35.368s22.008 14.65 35.368 14.65c13.361.0 25.921-5.203 35.369-14.65 3.872-3.871 7.064-8.328 9.491-13.246C97.826 68.608 97.611 67.309 96.76 66.458z"/></svg></label></div></header><article><h1>H5C3 Tips P1-200</h1><p class=meta>Last updated
+Unknown</p><ul class=tags><li><a href=https://code.gregueria.icu/tags/HTMLCSS/>Html& css</a></li></ul><aside class=mainTOC><details><summary>Table of Contents</summary><nav id=TableOfContents><ol><li><a href=#tips>Tips</a></li><li><a href=#css样式>CSS样式</a></li><li><a href=#emmet语法>Emmet语法</a></li><li><a href=#css的复合选择器>CSS的复合选择器</a><ol><li><a href=#后代选择器>后代选择器</a></li><li><a href=#子代选择器>子代选择器</a></li><li><a href=#并集选择器>并集选择器</a></li><li><a href=#伪类选择器>伪类选择器</a></li><li><a href=#选择器权重>选择器权重</a></li></ol></li><li><a href=#文字行高-text-height>文字行高 text-height</a></li><li><a href=#背景图片位置>背景图片位置</a></li></ol></nav></details></aside><a href=#tips><h2 id=tips><span class=hanchor arialabel=Anchor># </span>Tips</h2></a><ol><li>crtl + / 注释</li><li>cellpadding=&ldquo;10"单元格边缘和文字之间的距离，cellspacing=&ldquo;0"单元格与单元格之间的空隙</li><li><dl>自定义列表，与<dt>（定义项目/名字）、<dd>（描述每一个项目/名字）一起使用</li><li>CSS内容写在head标签里加一个style标签</li><li>对body进行选择，background-color整体页面的颜色，color是文字部分的颜色</li><li>CSS基础选择器<ol><li>标签选择器</li><li>类选择器 .class，类选择器：样式点定义，结构类调用，一个或多个，开发最常用。不能用标签名字比如.div作为类名<ol><li>使用多个类名用空格隔开</li></ol></li><li>id选择器，用井号#来定义，结构id调用，**只能调用一次，别人切勿使用。**和Class的区别类似名字和身份证，可以重名但不会有重复的身份证。ID选择器一般用于JS，CSS一般使用类选择器。</li><li>通配符选择器，星号*，选择所有标签</li></ol></li><li>符合属性的写法，font: font-style font-weitgh font-size/line-height font-family; 不能换顺序</li><li>开发中最常用的是十六进制颜色</li><li>em是一个相对单位，就是当前元素（font-size）1个文字的大小，如果当前元素没有设置大小，就会按照父元素的一个文字大小</li><li>CSS引入方式<ol><li>CSS三种样式表<ol><li>行内样式表（行内式）<ol><li>直接在标签内写一个style属性</li></ol></li><li>内部样式表（嵌入式）<ol><li>可以放在HTML文档中的任何地方，但一般写在<head></head>之中</li><li>通过这种方式可以方便控制整个页面中的元素样式设置</li><li>代码结构清晰，但是并没有实现结构与样式的完全分离</li></ol></li><li>外部样式表（链接式）<ol><li><code>&lt;link rel="stylesheet" href="styles/style.css"></code></li></ol></li></ol></li></ol></li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span><span class=lnt>44
+</span><span class=lnt>45
+</span><span class=lnt>46
+</span><span class=lnt>47
+</span><span class=lnt>48
+</span><span class=lnt>49
+</span><span class=lnt>50
+</span><span class=lnt>51
+</span><span class=lnt>52
+</span><span class=lnt>53
+</span><span class=lnt>54
+</span><span class=lnt>55
+</span><span class=lnt>56
+</span><span class=lnt>57
+</span><span class=lnt>58
+</span><span class=lnt>59
+</span><span class=lnt>60
+</span><span class=lnt>61
+</span><span class=lnt>62
+</span><span class=lnt>63
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    &lt;table&gt;
+</span></span><span class=line><span class=cl>        &lt;!-- 用colgroup定义每一列的样式 --&gt;
+</span></span><span class=line><span class=cl>        &lt;colgroup&gt;
+</span></span><span class=line><span class=cl>          &lt;col span=&#34;2&#34;&gt;
+</span></span><span class=line><span class=cl>          &lt;col style=&#34;background-color:#97DB9A;&#34;&gt;
+</span></span><span class=line><span class=cl>          &lt;col style=&#34;width:112px;&#34;&gt;
+</span></span><span class=line><span class=cl>          &lt;col style=&#34;background-color:#97DB9A;&#34;&gt;
+</span></span><span class=line><span class=cl>          &lt;col style=&#34;background-color:#DCC48E; border:4px solid #C1437A;&#34;&gt;
+</span></span><span class=line><span class=cl>          &lt;col span=&#34;2&#34; style=&#34;width:42px;&#34;&gt;
+</span></span><span class=line><span class=cl>        &lt;/colgroup&gt;
+</span></span><span class=line><span class=cl>        &lt;tr&gt;
+</span></span><span class=line><span class=cl>          &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+</span></span><span class=line><span class=cl>          &lt;th&gt;Mon&lt;/th&gt;
+</span></span><span class=line><span class=cl>          &lt;th&gt;Tues&lt;/th&gt;
+</span></span><span class=line><span class=cl>          &lt;th&gt;Wed&lt;/th&gt;
+</span></span><span class=line><span class=cl>          &lt;th&gt;Thurs&lt;/th&gt;
+</span></span><span class=line><span class=cl>          &lt;th&gt;Fri&lt;/th&gt;
+</span></span><span class=line><span class=cl>          &lt;th&gt;Sat&lt;/th&gt;
+</span></span><span class=line><span class=cl>          &lt;th&gt;Sun&lt;/th&gt;
+</span></span><span class=line><span class=cl>        &lt;/tr&gt;
+</span></span><span class=line><span class=cl>        &lt;tr&gt;
+</span></span><span class=line><span class=cl>          &lt;th&gt;1st period&lt;/th&gt;
+</span></span><span class=line><span class=cl>          &lt;td&gt;English&lt;/td&gt;
+</span></span><span class=line><span class=cl>          &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+</span></span><span class=line><span class=cl>          &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+</span></span><span class=line><span class=cl>          &lt;td&gt;German&lt;/td&gt;
+</span></span><span class=line><span class=cl>          &lt;td&gt;Dutch&lt;/td&gt;
+</span></span><span class=line><span class=cl>          &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+</span></span><span class=line><span class=cl>          &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+</span></span><span class=line><span class=cl>        &lt;/tr&gt;
+</span></span><span class=line><span class=cl>        &lt;tr&gt;
+</span></span><span class=line><span class=cl>          &lt;th&gt;2nd period&lt;/th&gt;
+</span></span><span class=line><span class=cl>          &lt;td&gt;English&lt;/td&gt;
+</span></span><span class=line><span class=cl>          &lt;td&gt;English&lt;/td&gt;
+</span></span><span class=line><span class=cl>          &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+</span></span><span class=line><span class=cl>          &lt;td&gt;German&lt;/td&gt;
+</span></span><span class=line><span class=cl>          &lt;td&gt;Dutch&lt;/td&gt;
+</span></span><span class=line><span class=cl>          &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+</span></span><span class=line><span class=cl>          &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+</span></span><span class=line><span class=cl>        &lt;/tr&gt;
+</span></span><span class=line><span class=cl>        &lt;tr&gt;
+</span></span><span class=line><span class=cl>          &lt;th&gt;3rd period&lt;/th&gt;
+</span></span><span class=line><span class=cl>          &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+</span></span><span class=line><span class=cl>          &lt;td&gt;German&lt;/td&gt;
+</span></span><span class=line><span class=cl>          &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+</span></span><span class=line><span class=cl>          &lt;td&gt;German&lt;/td&gt;
+</span></span><span class=line><span class=cl>          &lt;td&gt;Dutch&lt;/td&gt;
+</span></span><span class=line><span class=cl>          &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+</span></span><span class=line><span class=cl>          &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+</span></span><span class=line><span class=cl>        &lt;/tr&gt;
+</span></span><span class=line><span class=cl>        &lt;tr&gt;
+</span></span><span class=line><span class=cl>          &lt;th&gt;4th period&lt;/th&gt;
+</span></span><span class=line><span class=cl>          &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+</span></span><span class=line><span class=cl>          &lt;td&gt;English&lt;/td&gt;
+</span></span><span class=line><span class=cl>          &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+</span></span><span class=line><span class=cl>          &lt;td&gt;English&lt;/td&gt;
+</span></span><span class=line><span class=cl>          &lt;td&gt;Dutch&lt;/td&gt;
+</span></span><span class=line><span class=cl>          &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+</span></span><span class=line><span class=cl>          &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+</span></span><span class=line><span class=cl>        &lt;/tr&gt;
+</span></span><span class=line><span class=cl>      &lt;/table&gt;
+</span></span><span class=line><span class=cl>  
+</span></span></code></pre></td></tr></table></div></div><a href=#css样式><h2 id=css样式><span class=hanchor arialabel=Anchor># </span>CSS样式</h2></a><ul><li>text-decoration: none; 取消下划线</li></ul><a href=#emmet语法><h2 id=emmet语法><span class=hanchor arialabel=Anchor># </span>Emmet语法</h2></a><ul><li>想生成多个标签，div*5 + Tab</li><li>父子级，兄弟关系，用+号。ul>li，div+span + Tab</li><li>.demo + tab</li><li>Shift+Alt+F 对齐代码</li></ul><a href=#css的复合选择器><h2 id=css的复合选择器><span class=hanchor arialabel=Anchor># </span>CSS的复合选择器</h2></a><a href=#后代选择器><h3 id=后代选择器><span class=hanchor arialabel=Anchor># </span>后代选择器</h3></a><p>元素1 元素2 { }</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>ul li { } 
+</span></span><span class=line><span class=cl>&lt;!-- 选择ul里面*所有*的li标签 --&gt;
+</span></span></code></pre></td></tr></table></div></div><a href=#子代选择器><h3 id=子代选择器><span class=hanchor arialabel=Anchor># </span>子代选择器</h3></a><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>div&gt;p {
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>}
+</span></span><span class=line><span class=cl>&lt;!-- 只选择最近的那个标签 --&gt;
+</span></span></code></pre></td></tr></table></div></div><a href=#并集选择器><h3 id=并集选择器><span class=hanchor arialabel=Anchor># </span>并集选择器</h3></a><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>div ,
+</span></span><span class=line><span class=cl>p
+</span></span><span class=line><span class=cl>.pig li {
+</span></span><span class=line><span class=cl>  color: pink;
+</span></span><span class=line><span class=cl>}
+</span></span><span class=line><span class=cl>&lt;!-- 语法规范是竖着写 --&gt;
+</span></span></code></pre></td></tr></table></div></div><a href=#伪类选择器><h3 id=伪类选择器><span class=hanchor arialabel=Anchor># </span>伪类选择器</h3></a><p>用于向某些选择器添加特殊的效果，比如给链接增加特殊效果，或选择第1个，第n个元素。</p><p>书写最大特点是用（：）表示，比如:hover、:first-child</p><ol><li>链接伪类</li></ol><ul><li>a:link 选择所有未被访问的链接</li><li>a:visited 选择所有已被访问的链接</li><li>a:hover 选择鼠标指针位于其上的链接</li><li>a:active 选择活动链接，鼠标按住瞬间的样式
+选择伪类需要按照上述顺序设置（口诀love hate）</li></ul><ol start=2><li>focus伪类选择器
+用于选取获得焦点的表单元素
+焦点就是光标，一般情况<input>类表单才能获取，因此这个选择器业主要针对于表单元素来说。</li></ol><p><img src=https://raw.githubusercontent.com/Meyerclex/image/main/20220802001413.png width=auto alt></p><a href=#选择器权重><h3 id=选择器权重><span class=hanchor arialabel=Anchor># </span>选择器权重</h3></a><p><img src=https://raw.githubusercontent.com/Meyerclex/image/main/20220805123200.png width=auto alt></p><p>!important 使用：</p><p>div {
+color: pink!important;
+}</p><ul><li>复合选择器会有权重叠加的问题</li></ul><a href=#文字行高-text-height><h2 id=文字行高-text-height><span class=hanchor arialabel=Anchor># </span>文字行高 text-height</h2></a><p>a链接用line-height</p><p>如何实现文字垂直居中</p><p><img src=https://raw.githubusercontent.com/Meyerclex/image/main/20220804221046.png width=auto alt></p><a href=#背景图片位置><h2 id=背景图片位置><span class=hanchor arialabel=Anchor># </span>背景图片位置</h2></a><p><img src=https://raw.githubusercontent.com/Meyerclex/image/main/20220804223033.png width=auto alt></p><p>小的图标一般都是用background-image实现的，默认平铺，用background-repeat: no-repeat取消平铺，background-position定位</p></article><hr><div class=page-end id=footer><div class=backlinks-container><h3>Backlinks</h3><ul class=backlinks><li><a href=/ data-ctx="H5C3 Tips P1-200" data-src=/ class=internal-link>Index</a></li></ul></div><div><script src=https://cdn.jsdelivr.net/npm/d3@6.7.0/dist/d3.min.js integrity="sha256-+7jaYCp29O1JusNWHaYtgUn6EhuP0VaFuswhNV06MyI=" crossorigin=anonymous></script><h3>Interactive Graph</h3><div id=graph-container></div><style>:root{--g-node:var(--secondary);--g-node-active:var(--primary);--g-node-inactive:var(--visited);--g-link:var(--outlinegray);--g-link-active:#5a7282}</style><script src=https://code.gregueria.icu/js/graph.abd4bc2af3869a96524d7d23b76152c7.js></script></div></div><div id=contact_buttons><footer><p>Made by Lyin using <a href=https://github.com/jackyzha0/quartz>Quartz</a>, © 2022</p><ul><li><a href=https://code.gregueria.icu/>Home</a></li><li><a href=https://gregueria.icu>Sooo long and Thanks for All the fish :p</a></li></ul></footer></div></div></body></html>
