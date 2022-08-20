@@ -88,4 +88,4 @@ make serve
 6. 执行命令行后，博客生成成功，访问`http://localhost:1313/`本地预览。
 
 ### 发布你的页面
-
+全程按照[Deploying Quartz to the Web](https://quartz.jzhao.xyz/notes/hosting/)操作，完全不知道原理，我至今也没真正搞懂Github分支是什么，不知道为什么我本地所作的一些修改全都安静无缝地Push到了Hugo分支里。就这样静静地操作到了最后一步绑定域名。
