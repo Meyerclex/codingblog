@@ -59,7 +59,7 @@ git clone https://github.com/YOUR-USERNAME/quartz
 ![](https://raw.githubusercontent.com/Meyerclex/image/main/20220821004743.png)
 4. 在Obsidian的`设置 > 文件与链接`中打开`始终更新内部链接`，内部链接类型：`基于仓库根目录的绝对路径`。
 
-### 安装hugo-obsidian`
+### 安装hugo-obsidian
 
 > 需要确保你已经安装了 [Go](https://golang.org/doc/install) (>= 1.16) 。
 
