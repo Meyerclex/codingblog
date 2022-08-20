@@ -9,12 +9,11 @@ title: 💚Lyin's Tech Note
 5. [[Loop 循环]]
 ## 📒HTML5 + CSS3 
 1. [[HTML5 基础]]
-2. [[Note]]
-3. [[✅前端Tips P1-200]]
-4. [[文件路径的一些通用规则]]
-5. [[前端学习 P1-200]]
-6. [[H5(Html5)+CSS3：P200-P275]]
-7. [[H5(Html5)+CSS3：P275-]]
+2. [[H5C3 Tips P1-200]]
+3.  [[文件路径的一些通用规则]]
+4. [[H5(Html5)+CSS3：P1-200]]
+5. [[H5(Html5)+CSS3：P200-P275]]
+6. [[H5(Html5)+CSS3：P275-]]
 
 
 
