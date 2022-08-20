@@ -94,7 +94,7 @@ make serve
 
 关于子域名我是这么干的：
 
-1. 在仓库根目录`Add file`，写一个文件名为`CNAME`且没有后缀的文件。在里面写入你要绑定的域名：`code.gregueria.icu`。
+1. 在仓库根目录`Add file`，写一个文件名为`CNAME`且没有后缀的文件。在里面写入你要绑定的域名：`c.gregueria.icu`。
 2. 然后去DNS设置里，子域名记录，记录类型为`CNAME`，`  
 IP地址/目标主机：`你的GitHub用户名.github.io`。
 3. 然后去`Setting > Pages > Custom domain`把你的域名写好，保存。
