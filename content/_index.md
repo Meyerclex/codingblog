@@ -5,15 +5,14 @@ title: 💚Lyin's Tech Note
 1. [[🐺The complete JavaScript Course 2022]]
 2. [[Function 函数]]
 3. [[Array 数组]]
-4. [[Object]]
+4. [[Object 对象]]
 5. [[Loop 循环]]
 ## 📒HTML5 + CSS3 
-1. [[HTML5 基础]]
-2. [[H5C3 Tips P1-200]]
-3.  [[文件路径的一些通用规则]]
-4. [[H5(Html5)+CSS3：P1-200]]
-5. [[H5(Html5)+CSS3：P200-P275]]
-6. [[H5(Html5)+CSS3：P275-]]
+1. [[H5C3 Tips P1-200]]
+2. [[文件路径的一些通用规则]]
+3. [[H5(Html5)+CSS3：P1-200]]
+4. [[H5(Html5)+CSS3：P200-P275]]
+5. [[H5(Html5)+CSS3：P275-]]
 
 
 

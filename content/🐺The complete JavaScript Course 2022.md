@@ -1,5 +1,5 @@
 ---
-title: 🐺The complete JavaScript Course 2022
+title: The complete JavaScript Course 2022
 tags: 
 - JavaScript
 ---
