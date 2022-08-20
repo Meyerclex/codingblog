@@ -6,7 +6,7 @@ tags:
 
 前段时间在象上刷到[Quartz](https://github.com/jackyzha0/quartz)，算是一个支持Obsidian双链玩法的博客？点了收藏之后今天适逢周六，刚好呢又到了晚上十一点（人家的一个不干正事又不打算睡觉的时间），虽然呢也没有什么笔记要整理，但是就是看到漂亮的东西想试一试。搭建并不算难，而且很漂亮！于是来写一下笔记记录过程。
 
-*第一步：BGM - In Motion启动！动工前先默念一遍Lets hacking begin才能搞下去。*
+*第一步：BGM - In Motion启动！Lets hacking begin！*
 
 首先来讲一下我对Quartz的使用感受。它的框架也是基于Hugo啦，这直接降低了我的心理负担，因为算是一个很熟悉的东西。
 
@@ -100,6 +100,10 @@ IP地址/目标主机：`你的GitHub用户名.github.io`。
 3. 然后去`Setting > Pages > Custom domain`把你的域名写好，保存。
 
 大功告成！
+
+### 其余的配置
+
+在`config.toml`和`/data/config.yaml`和`/data/graphConfig.yaml`中可以修改网站基本配置。
 
 ### 其他
 1. 这个分支到底是怎么回事啊。
