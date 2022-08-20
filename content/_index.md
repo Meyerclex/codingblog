@@ -1,10 +1,15 @@
 ---
 title: Index
+tags: 
+- Index
 ---
 
 ## 🖼️ About 
-- 这里是Lyin有关代码的笔记。页面由[Quartz](https://github.com/jackyzha0/quartz)生成，
--  [[学习进度]]
+这里是Lyin有关代码的笔记。
+
+页面是我探索互联网各类服务的玩具成果，页面由由[Quartz](https://github.com/jackyzha0/quartz)生成，搭配Obsidian写作。
+
+[Tags: Setup](tags/setup)里有关于Quartz的其他信息（当然是由原作者保留编写的，只是）
 ## 🖋️JavaScript
 1. [[The complete JavaScript Course 2022]]
 2. [[Function 函数]]
