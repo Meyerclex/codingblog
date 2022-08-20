@@ -31,7 +31,7 @@ tags:
 
 ## 你需要有些什么
 1. Github账号
-2.  [Go](https://golang.org/doc/install) 环境(>= 1.16) 。（这个东西我都不知道我为什么会有）
+2. [Go](https://golang.org/doc/install) 环境(>= 1.16) 。（这个东西我都不知道我为什么会有）
 3. [Hugo](https://gohugo.io/getting-started/installing/)
 4. Make工具。因为我也缺少这个所以后文有关于它的安装与配置。
 ## 那么就开始吧！
@@ -55,9 +55,7 @@ git clone https://github.com/YOUR-USERNAME/quartz
 	2. 那么此时就涉及一个问题，可是`_index.md`文件是放在`/content`目录中的，这意味着你在Obsidian中见不到它。
 	3. 可是按照我的笔记使用逻辑，我希望博客主页(`index.md`)直接作为我的笔记索引页，放满我的笔记双链（幻想），如果它不能在Obsidian里修改，那就会很不方便。
 2. 我希望一打开笔记就能修改所有东西。因此我是这么做的：直接将我的Obsidian笔记库位置放在了根目录`quartz`中，并将上述三个文件夹、一个`_index.md`剪切到了笔记库中，删掉`quartz/content`，并把笔记库重命名为`content`。
-3. 此时你的`content`文件夹应该是这样的：
-![](https://raw.githubusercontent.com/Meyerclex/image/main/20220821004743.png)
-4. 在Obsidian的`设置 > 文件与链接`中打开`始终更新内部链接`，内部链接类型：`基于仓库根目录的绝对路径`。
+3. 在Obsidian的`设置 > 文件与链接`中打开`始终更新内部链接`，内部链接类型：`基于仓库根目录的绝对路径`。
 
 ### 安装hugo-obsidian
 
