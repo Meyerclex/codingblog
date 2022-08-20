@@ -21,3 +21,6 @@ tags:
 但是它的缺点是本身并不支持归档（Archive）的功能。于是作为归档功能的替代，在此隆重向大家介绍我用Obsidian时常用的MOC（Map of Content），算是一种整理思路。轻轻地推荐这篇最早让我了解到Map of Content的一篇文章：[Obsidian · 网课学习笔记整理 From Seviche.cc](https://seviche.cc/2022-03-07-obsidian-notes1)。
 
 其实概括而谈MOC就是放弃用Obsidian本身的文件夹功能给笔记归类（并非必要，只是我很懒得整理），直接建立一个索引页，里面用双链功能创建文章，索引页就像归档或总目录一样，带你去任何一页笔记。
+
+而Quartz的使用完全适配这种笔记管理思路，在Quartz中，`_index.md`文件就是博客主页，可以被任意编写，因此可以作为索引/文章目录页使用。
+
