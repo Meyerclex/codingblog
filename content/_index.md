@@ -16,9 +16,7 @@ title: 💚Lyin's Tech Note
 6. [[H5(Html5)+CSS3：P200-P275]]
 7. [[H5(Html5)+CSS3：P275-]]
 
-## 📃参考
-1. [[文科零基础转码校招经验分享帖.pdf]]
-2. [[国内脱产4个月成功转码上岸经历 – 夏 诤.pdf]]
+
 
 
 ## JS 视频目录及To Do List
