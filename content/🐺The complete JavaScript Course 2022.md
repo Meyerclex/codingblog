@@ -1,6 +1,7 @@
 ---
 title: 🐺The complete JavaScript Course 2022
-tag: JavaScript
+tags: 
+- JavaScript
 ---
 ## 7 Primitive Data Types
 1. Number
