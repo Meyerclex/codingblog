@@ -6,7 +6,6 @@ tags:
 
 ## 🖼️ About 
 这里是Lyin有关代码的笔记。
-
 1. 站点是我探索互联网各类服务的玩具成果。页面由[Quartz](https://github.com/jackyzha0/quartz)生成，搭配Obsidian写作。
 2. [Setup Tag](tags/setup)里有关于Quartz的其他信息，**当然是由原作者编写的**，只是我仍保留在库中没有删除，如果你感兴趣的话可以翻阅看看。
 3. [[📗 Quartz安装笔记]]
