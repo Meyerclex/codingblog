@@ -7,8 +7,13 @@
         "id": "a82f66387935f639",
         "type": "leaf",
         "state": {
-          "type": "empty",
-          "state": {}
+          "type": "markdown",
+          "state": {
+            "file": "📑MOC：Web前端.md",
+            "mode": "source",
+            "backlinks": true,
+            "source": false
+          }
         }
       }
     ],
@@ -73,6 +78,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "📑MOC：Web前端.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -89,6 +95,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "📑MOC：Web前端.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -110,7 +117,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "📑MOC：Web前端.md"
+              }
             }
           },
           {
@@ -139,6 +148,8 @@
   },
   "active": "a82f66387935f639",
   "lastOpenFiles": [
+    "🐺The complete JavaScript Course 2022.md",
+    "📑MOC：Web前端.md",
     "🖋️网页划线/模板字符串 - JavaScript  MDN.md",
     "🖋️网页划线/JavaScript 的基本语法.md",
     "🖋️网页划线/语法和数据类型.md",
@@ -146,8 +157,6 @@
     "📚学习/2022-5-17 应急前沿课-文献综述.md",
     "✅杂锦/🕣Journals/Journals.md",
     "✅杂锦/🕣Journals/delete.md",
-    "✅杂锦/🕣Journals/2022-01-24.md",
-    "✅杂锦/🕣Journals/2022-01-21.md",
-    "✅杂锦/🕣Journals/2021-12-27.md"
+    "✅杂锦/🕣Journals/2022-01-24.md"
   ]
 }
