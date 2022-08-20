@@ -1,8 +1,12 @@
 ---
-title: 💚Lyin's Tech Note
+title: Index
 ---
+
+## 🖼️ About 
+- 这里是Lyin有关代码的笔记。页面由[Quartz](https://github.com/jackyzha0/quartz)生成，
+-  [[学习进度]]
 ## 🖋️JavaScript
-1. [[🐺The complete JavaScript Course 2022]]
+1. [[The complete JavaScript Course 2022]]
 2. [[Function 函数]]
 3. [[Array 数组]]
 4. [[Object 对象]]
