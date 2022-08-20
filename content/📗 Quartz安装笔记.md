@@ -88,4 +88,15 @@ make serve
 6. 执行命令行后，博客生成成功，访问`http://localhost:1313/`本地预览。
 
 ### 发布你的页面
-全程按照[Deploying Quartz to the Web](https://quartz.jzhao.xyz/notes/hosting/)操作，完全不知道原理，我至今也没真正搞懂Github分支是什么，不知道为什么我本地所作的一些修改全都安静无缝地Push到了Hugo分支里。就这样静静地操作到了最后一步绑定域名。
+全程按照[Deploying Quartz to the Web](https://quartz.jzhao.xyz/notes/hosting/)操作，完全不知道原理，我至今也没真正搞懂Github分支是什么，不知道为什么我本地所作的一些修改全都安静无缝地Push到了Hugo分支里。但它就是成功了（成功了）。
+
+我就这样静静地操作到了最后一步绑定域名。
+
+关于子域名我是这么干的：
+
+1. 在仓库根目录`Add file`，写一个文件名为`CNAME`且没有后缀的文件。在里面写入你要绑定的域名：`code.gregueria.icu`。
+2. 然后去DNS设置里，子域名记录，记录类型为`CNAME`，`  
+IP地址/目标主机：`你的GitHub用户名.github.io`。
+3. 然后去`Setting > Pages > Custom domain`把你的域名写好，保存。
+
+大功告成！
