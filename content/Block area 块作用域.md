@@ -1,9 +1,3 @@
----
-title: "Block area 块作用域"
-tags: 
-- JavaScript
----
-
 - 在 `ES5` 中规定，函数只能在顶层作用域和函数作用域之中声明，不能在块级作用域声明。而在 `ES6` 中引入了块级作用域，允许函数可以在块级作用域中声明。块级作用域之中，函数声明语句的行为类似于 `let`，在块级作用域之外不可引用。
 - 通过`var`声明的变量或者非严格模式下 (non-strict mode) 创建的函数声明**没有**块级作用域。
 - 相比之下，使用 [`let`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/let)和[`const`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/const)声明的变量是**有**块级作用域的。
