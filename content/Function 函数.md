@@ -36,6 +36,14 @@ const fnName = function () {…};
 
 如果实参的个数多余形参，会取到形参的个数。如果实参的个数小于形参，形参可以看作是不用声明的变量，未被实参取到的参数是一个变量但没有接受值，多于的形参定义为undefined，最终的结果就是NaN。
 
+## return
+```js
+function sum(x, y) {
+return x + y //return后面的代码不会被执行
+alert('alert')
+}
+```
+
 ## 匿名函数
 
 ```javascript
