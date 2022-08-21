@@ -1,8 +1,9 @@
 ---
-title: "Scope 作用域 & Scope chain 作用域链"
+title: "Scope 作用域"
 tags: 
 - JavaScript
 ---
+
 
 ## Scope 作用域
 
