@@ -99,6 +99,8 @@ IP地址/目标主机：`你的GitHub用户名.github.io`。
 
 大功告成！
 
+在这一步中我发现我每次更新完文件重新部署后Github Page都会显示404，搜索一圈发现hexo
+
 ### 其余的配置
 
 在`config.toml`和`/data/config.yaml`和`/data/graphConfig.yaml`中可以修改网站基本配置。
