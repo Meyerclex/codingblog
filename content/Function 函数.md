@@ -44,7 +44,7 @@ return x + y //return后面的代码不会被执行
 alert('alert')
 }
 ```
-2. return只能返回一个值
+2. return只能返回一个值。可以返回数组。
 ```js
 function fn(x, y) {
 return x, y;
@@ -52,7 +52,12 @@ return x, y;
 console.log(fn(1, 2)) //return返回的结果是最后一个值
 
 ```
-可以返回数组
+3. 如果函数有return则返回return的值，无return则返回undefined。
+- break：结束当前的循坏体（如for、while）
+- continue：跳出本次循环，继续执行下次循环
+- return：不仅可以退出循环，还能够返回return语句中的值，同时还可以结束当前函数体内的代码
+## arguments的使用
+当我们不确定有多少个参数传递的时候ke'yi'yo
 ## 匿名函数
 
 ```javascript
