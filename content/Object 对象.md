@@ -119,3 +119,18 @@ console.log(star.name) // 'leslie'
 
 ## 遍历对象属性
 `for...in`用于对数组或者对象的属性进行循环操作。
+```js
+var obj = {
+	name: 'x',
+	age: 18,
+	gender: 'male',
+	fn: function
+《}
+// for (变量 in 对象) {
+//}
+for (var k in obj) {
+	console.log(k) // k输出得到的是属性名
+	console.log(obj[k]) //obj[k]得到的是属性值
+}
+// 使用for in里面的变量，习惯写k或者key
+```
