@@ -1,8 +1,11 @@
 ---
-title: "Scope 作用域"
+title: "Scope 作用域 & Scope chain 作用域链"
 tags: 
 - JavaScript
 ---
+
+## Scope 作用域
+
 ![](https://raw.githubusercontent.com/Meyerclex/image/main/20220821165520.png)
 - JS作用域：变量在某个范围内起作用和效果，目的是为了提高程序的可靠性，减少命名冲突。
 	1. 全局作用域：整个`<script>`标签，或者是一个单独的JS文件。
@@ -14,3 +17,7 @@ tags:
 	- 全局变量只有浏览器关闭时才销毁，占内存资源
 	- 局部变量当程序执行完毕就会销毁，节约内存资源
 - [[Block area 块作用域]]
+
+## Scope chain 作用域链
+- 根据内部函数可以访问外部函数变量的这种机制，用链式查找决定哪些数据能被内部函数访问，就成为作用域链。
+- 

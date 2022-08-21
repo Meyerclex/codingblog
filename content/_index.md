@@ -16,7 +16,7 @@ tags:
 3. [[Array 数组]]
 4. [[Object 对象]]
 5. [[Loop 循环]]
-6. [[Scope 作用域]]
+6. [[Scope 作用域 & Scope chain 作用域链]]
 ## 📒HTML5 + CSS3 
 1. [[H5C3 Tips P1-200]]
 2. [[H5(Html5)+CSS3：P1-200]]
