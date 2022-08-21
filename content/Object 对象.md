@@ -89,4 +89,19 @@ xiaoming.hasOwnProperty('toString'); // false
 ```
 
 ## 构造函数
-因为一次创建一个对昂，里面很多的属性和方法是大量相同的，因此可以利用函数的方法重复相同的代码，我们把这个函数成为构造函数。因为这个代码不一样，里面封装的不是普通的代码，而是对象。构造函数就是把对象里面一些相同的属性和方法抽象出来封装到函数中，。
+因为一次创建一个对昂，里面很多的属性和方法是大量相同的，因此可以利用函数的方法重复相同的代码，我们把这个函数成为构造函数。因为这个代码不一样，里面封装的不是普通的代码，而是对象。构造函数就是把对象里面一些相同的属性和方法抽象出来封装到函数中。
+
+```js
+function 构造函数名() {
+	this.属性 = 值;
+	this.方法 = function() {}
+}
+new 构造函数名();
+// e.g
+function Idol(yourname, yourage, yourgender) {
+	this.name = 'yourname';
+	this.age = age;
+	this.gender = yourgender;
+}
+new Idol('leslie', 28, 'male')
+```
