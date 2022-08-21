@@ -124,8 +124,8 @@ var obj = {
 	name: 'x',
 	age: 18,
 	gender: 'male',
-	fn: function
-《}
+	fn: function() {}
+}
 // for (变量 in 对象) {
 //}
 for (var k in obj) {
