@@ -103,5 +103,10 @@ function Idol(yourname, yourage, yourgender) {
 	this.age = age;
 	this.gender = yourgender;
 }
-new Idol('leslie', 28, 'male')
+var star = new Idol('leslie', 28, 'male')
+console.log(star.name) // 'leslie'
 ```
+1. 构造函数首字母大写。
+2. 构造函数不需要`return`就可以返回结果。
+3. 调用构造函数必须使用`new`。
+4. 调用一次`new Idol`就创造了一次对象。
