@@ -4,9 +4,7 @@ tags:
 - JavaScript
 ---
 
-
-键值对
-`property:value`
+键值对 `property:value`
 
 ## Key Point
 - 和Array最大的差别在于，Object中属性顺序不重要，Array的顺序非常重要，因为它是我们访问元素的方式
