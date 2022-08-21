@@ -57,7 +57,12 @@ console.log(fn(1, 2)) //return返回的结果是最后一个值
 - continue：跳出本次循环，继续执行下次循环
 - return：不仅可以退出循环，还能够返回return语句中的值，同时还可以结束当前函数体内的代码
 ## arguments的使用
-当我们不确定有多少个参数传递的时候ke'yi'yo
+当我们不确定有多少个参数传递的时候可以用arguments来或许，在JS中arguments世界上是当前函数的一个内置对象。所有函数都内置了一个arguments对象，其储存了传递的所有实参。
+
+arguments展示形式是一个伪数组，因此可以进行遍历。伪数组具有以下特点：
+- 具有length属性
+- 按索引方式存储数据
+- 不具有数组的push、pop等方法
 ## 匿名函数
 
 ```javascript
