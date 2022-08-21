@@ -1,5 +1,5 @@
 ---
-title: Index
+title: Archive | Lyin's Room
 tags: 
 - Index
 ---

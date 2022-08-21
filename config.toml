@@ -1,14 +1,14 @@
 baseURL = "https://c.gregueria.icu/"
 languageCode = "en-us"
 googleAnalytics = "G-XYFD95KB4J"
-relativeURLs = true
+relativeURLs = false
 disablePathToLower = true
 ignoreFiles = [
     "/content/templates/*",
     "/content/private/*",
 ]
-summaryLength = 20
-paginate = 10
+summaryLength = 40
+paginate = 15
 enableGitInfo = true
 
 [markup]
