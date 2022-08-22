@@ -50,7 +50,9 @@ while (true) {
 ## `Date`日期对象
 `Date`是一个构造函数，因此需要用`new`来调用创建。若将它作为常规函数调用（即不加 [`new`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/new) 操作符），将返回一个字符串，而非 `Date` 对象。
 
+```js
 new Date();
 new Date(value);
 new Date(dateString);
 new Date(year, monthIndex [, day [, hours [, minutes [, seconds [, milliseconds]]]]]);
+```
