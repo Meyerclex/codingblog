@@ -24,3 +24,19 @@ function getRandomIntInclusive(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min; //含最大值，含最小值
 }
 ```
+
+### 猜数字游戏
+```js
+function getRandom(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min; //含最大
+}
+var random = getRandom(1, 10);
+while (true) {
+	var num = prompt('猜1-10之间的一个数字')
+	if (num > random) {
+	alert('猜大了'); 
+	} else if ()
+}
+```
