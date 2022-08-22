@@ -76,7 +76,7 @@ console.log(`今天是${year}年${month}月${dates}日，${day}。`)
 
 ### 要求封装一个返回当前时间的函数
 ```js
-function getTime() {
+function getTimer() {
 var h = time.getHours()
 h = h < 10 ? '0' + h : h; // 如果h小于10，则在前面加一个占位的0
 var m = time.getMinutes()
@@ -85,4 +85,8 @@ var s = time.getSeconds()
 s = s < 10 ? '0' + s : s;
 return h + ':' + m + ':' + s;
 } 
+console.log(getTimer());
 ```
+
+### 获取日期的总的毫秒形式
+`Date`对象是基于1970年1月1日（世界标准时间）起的毫秒数。经常利用总的毫秒数来计算时间，因为它更精确。
