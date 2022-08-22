@@ -71,3 +71,7 @@ var arr = ['星期日', '星期一', '星期二', '星期三', '星期四', '星
 var day = arr[date.getDay()]
 console.log(`今天是${year}年${month}月${dates}日，${day}。`) 
 ```
+
+![](https://raw.githubusercontent.com/Meyerclex/image/main/20220822175313.png)
+
+### 要求封裝一個返回當前
