@@ -53,8 +53,11 @@ while (true) {
 ```js
 new Date();
 new Date(value);
-new Date(dateString);
+new Date(dateString); // new Date('2019-5-1')或new Date('2019/5/1')
 new Date(year, monthIndex [, day [, hours [, minutes [, seconds [, milliseconds]]]]]);
 ```
 
 如果不加参数则返回当前系统的当前时间。
+
+- `getMonth()`获取当月，只能获取0-11，`date.getMonth() + 1`才是正确的月份。
+- `getDay()`huo'qu
