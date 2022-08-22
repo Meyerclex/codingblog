@@ -61,11 +61,13 @@ new Date(year, monthIndex [, day [, hours [, minutes [, seconds [, milliseconds]
 
 - `getMonth()`获取当月，只能获取0-11，`date.getMonth() + 1`才是正确的月份。
 - `getDay()`获取星期几，周日为0，周六为6
+
 ```js
+var date = new Date();
 var year = date.getFullYear();
-var month = date.getFullMonth() + 1;
+var month = date.getMonth() + 1;
 var dates = date.getDate();
 var arr = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六']
-var day = date.getDay()
-
+var day = arr[date.getDay()]
+console.log(`今天是${year}年${month}月${dates}日，${day}。`) 
 ```
