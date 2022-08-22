@@ -60,4 +60,12 @@ new Date(year, monthIndex [, day [, hours [, minutes [, seconds [, milliseconds]
 如果不加参数则返回当前系统的当前时间。
 
 - `getMonth()`获取当月，只能获取0-11，`date.getMonth() + 1`才是正确的月份。
-- `getDay()`huo'qu
+- `getDay()`获取星期几，周日为0，周六为6
+```js
+var year = date.getFullYear();
+var month = date.getFullMonth() + 1;
+var dates = date.getDate();
+var arr = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六']
+var day = date.getDay()
+
+```
