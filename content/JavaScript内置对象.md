@@ -74,4 +74,15 @@ console.log(`今天是${year}年${month}月${dates}日，${day}。`)
 
 ![](https://raw.githubusercontent.com/Meyerclex/image/main/20220822175313.png)
 
-### 要求封裝一個返回當前
+### 要求封装一个返回当前时间的函数
+```js
+function getTime() {
+var h = time.getHours()
+h = h < 10 ? '0' + h : h; // 如果h小于10，则在前面加一个占位的0
+var m = time.getMinutes()
+m = m < 10 ? '0' + m : m;
+var s = time.getSeconds()
+s = s < 10 ? '0' + s : s;
+return h + ':' + m + ':' + s;
+} 
+```
