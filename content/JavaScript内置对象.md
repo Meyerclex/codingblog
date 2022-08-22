@@ -12,7 +12,7 @@ tags:
 	- `Math.PI` 圆周率
 	- `Math.floor()` 向下取整
 	- `Math.ceil()` 向上取整
-	- `Math.round()` 四舍五入版就近取证，`-3.5`会取值`-3`
+	- `Math.round()` 四舍五入版就近取正，但`-3.5`会取值`-3`
 	- `Math.abs()` 绝对值
 	- `Math.max()` / `Math.min()` 求最大和最小值
 
