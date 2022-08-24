@@ -221,3 +221,13 @@ Task：每隔一秒钟切换一次图片
 	- 事件源：哪个DOM元素被事件触发了，要获取DOM元素
 	- 事件：用什么方式触发，比如鼠标单击Click、鼠标经过mouseover等
 	- 事件调用的函数：要做什么
+```js
+// 获取元素
+let btn = document.querySelector('button');
+// 事件监听（注册事件）
+btn.addEventListener('click', function() {
+alert('被点击了')
+})
+```
+1. 事件类型要加引号
+2. 函数时点击之后再去执行，每次点击都会执行一次
