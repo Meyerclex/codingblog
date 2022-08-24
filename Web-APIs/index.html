@@ -8,7 +8,7 @@
 <script src=https://c.gregueria.icu/js/code-title.b35124ad8db0ba37162b886afb711cbc.min.js></script>
 <script src=https://c.gregueria.icu/js/clipboard.c20857734e53a3fb733b7443879efa61.min.js></script>
 <script src=https://c.gregueria.icu/js/callouts.7723cac461d613d118ee8bb8216b9838.min.js></script>
-<script>const BASE_URL="https://c.gregueria.icu/",fetchData=Promise.all([fetch("https://c.gregueria.icu/indices/linkIndex.09df10f0f7f435a73add25320fd5ca12.min.json").then(e=>e.json()).then(e=>({index:e.index,links:e.links})),fetch("https://c.gregueria.icu/indices/contentIndex.a08b71e50d5888392938acbb03c09474.min.json").then(e=>e.json())]).then(([{index:e,links:t},n])=>({index:e,links:t,content:n})),render=()=>{const e=new URL(BASE_URL),t=e.pathname,n=window.location.pathname,s=t==n;addCopyButtons(),addTitleToCodeBlocks(),addCollapsibleCallouts(),initPopover("https://c.gregueria.icu",!0,!0);const o=document.getElementById("footer");if(o){const e=document.getElementById("graph-container");if(!e)return requestAnimationFrame(render);e.textContent="";const t=s&&!1;drawGraph("https://c.gregueria.icu",t,[{"/moc":"#4388cc"}],t?{centerForce:1,depth:-1,enableDrag:!0,enableLegend:!1,enableZoom:!0,fontSize:.5,linkDistance:1,opacityScale:3,repelForce:1,scale:1.4}:{centerForce:1,depth:1,enableDrag:!0,enableLegend:!1,enableZoom:!0,fontSize:.6,linkDistance:1,opacityScale:3,repelForce:2,scale:1.2})}},init=(e=document)=>{addCopyButtons(),addTitleToCodeBlocks(),renderMathInElement(e.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1}],throwOnError:!1})}</script><script type=module>
+<script>const BASE_URL="https://c.gregueria.icu/",fetchData=Promise.all([fetch("https://c.gregueria.icu/indices/linkIndex.09df10f0f7f435a73add25320fd5ca12.min.json").then(e=>e.json()).then(e=>({index:e.index,links:e.links})),fetch("https://c.gregueria.icu/indices/contentIndex.f9bd9a13eeedd02ed378a3c2f656ef72.min.json").then(e=>e.json())]).then(([{index:e,links:t},n])=>({index:e,links:t,content:n})),render=()=>{const e=new URL(BASE_URL),t=e.pathname,n=window.location.pathname,s=t==n;addCopyButtons(),addTitleToCodeBlocks(),addCollapsibleCallouts(),initPopover("https://c.gregueria.icu",!0,!0);const o=document.getElementById("footer");if(o){const e=document.getElementById("graph-container");if(!e)return requestAnimationFrame(render);e.textContent="";const t=s&&!1;drawGraph("https://c.gregueria.icu",t,[{"/moc":"#4388cc"}],t?{centerForce:1,depth:-1,enableDrag:!0,enableLegend:!1,enableZoom:!0,fontSize:.5,linkDistance:1,opacityScale:3,repelForce:1,scale:1.4}:{centerForce:1,depth:1,enableDrag:!0,enableLegend:!1,enableZoom:!0,fontSize:.6,linkDistance:1,opacityScale:3,repelForce:2,scale:1.2})}},init=(e=document)=>{addCopyButtons(),addTitleToCodeBlocks(),renderMathInElement(e.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1}],throwOnError:!1})}</script><script type=module>
     import { attachSPARouting } from "https:\/\/c.gregueria.icu\/js\/router.9d4974281069e9ebb189f642ae1e3ca2.min.js"
     attachSPARouting(init, render)
   </script></head><script async src="https://www.googletagmanager.com/gtag/js?id=G-XYFD95KB4J"></script>
@@ -127,4 +127,52 @@ Aug 24, 2022</p><ul class=tags><li><a href=https://c.gregueria.icu/tags/JavaScri
 </span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kd>let</span> <span class=nx>变量名</span> <span class=o>=</span> <span class=nx>setInterval</span><span class=p>(</span><span class=nx>函数</span><span class=p>,</span> <span class=nx>间隔时间</span><span class=p>)</span>
 </span></span><span class=line><span class=cl><span class=nx>clearInterval</span><span class=p>(</span><span class=nx>变量名</span><span class=p>)</span> <span class=c1>// 清除定时器
 </span></span></span></code></pre></td></tr></table></div></div><a href=#倒计时效果><h3 id=倒计时效果><span class=hanchor arialabel=Anchor># </span>倒计时效果</h3></a><p>Task：按钮60秒后才可以使用
-分析：</p><ol><li>开始先把按钮禁用disabled</li><li>获取元素</li><li>函数内处理逻辑<ol><li>秒数开始倒减</li><li>按钮里的文字跟着一起变化</li><li>秒数为0停止计时器，里面的文字变为“同意”，最后按钮可以点击</li></ol></li></ol></article><hr><div class=page-end id=footer><div class=backlinks-container><h3>Backlinks</h3><ul class=backlinks><li><a href=/ data-ctx="Web APIs" data-src=/ class=internal-link>Archive | Lyin's Room</a></li></ul></div><div><script src=https://cdn.jsdelivr.net/npm/d3@6.7.0/dist/d3.min.js integrity="sha256-+7jaYCp29O1JusNWHaYtgUn6EhuP0VaFuswhNV06MyI=" crossorigin=anonymous></script><h3>Interactive Graph</h3><div id=graph-container></div><style>:root{--g-node:var(--secondary);--g-node-active:var(--primary);--g-node-inactive:var(--visited);--g-link:var(--outlinegray);--g-link-active:#5a7282}</style><script src=https://c.gregueria.icu/js/graph.abd4bc2af3869a96524d7d23b76152c7.js></script></div></div><div id=contact_buttons><footer><p>Made by Lyin using <a href=https://github.com/jackyzha0/quartz>Quartz</a>, © 2022</p><ul><li><a href=https://c.gregueria.icu/>Home</a></li><li><a href=https://gregueria.icu>Sooo long and Thanks for All the fish :p</a></li></ul></footer></div></div></body></html>
+分析：</p><ol><li>开始先把按钮禁用disabled</li><li>获取元素</li><li>函数内处理逻辑<ol><li>秒数开始倒减</li><li>按钮里的文字跟着一起变化</li><li>秒数为0停止计时器，里面的文字变为“同意”，最后按钮可以点击</li></ol></li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=o>&lt;</span><span class=nx>body</span><span class=o>&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=o>&lt;</span><span class=nx>textarea</span> <span class=nx>name</span><span class=o>=</span><span class=s2>&#34;&#34;</span> <span class=nx>id</span><span class=o>=</span><span class=s2>&#34;&#34;</span> <span class=nx>cols</span><span class=o>=</span><span class=s2>&#34;30&#34;</span> <span class=nx>rows</span><span class=o>=</span><span class=s2>&#34;10&#34;</span><span class=o>&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=nx>用户注册协议</span>
+</span></span><span class=line><span class=cl>    <span class=o>&lt;</span><span class=err>/textarea&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=o>&lt;</span><span class=nx>br</span><span class=o>&gt;</span>
+</span></span><span class=line><span class=cl>    <span class=o>&lt;</span><span class=nx>button</span> <span class=kr>class</span><span class=o>=</span><span class=s2>&#34;btn&#34;</span> <span class=nx>disabled</span><span class=o>&gt;</span><span class=nx>我已阅读用户协议</span><span class=p>(</span><span class=mi>6</span><span class=p>)</span><span class=o>&lt;</span><span class=err>/button&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>    <span class=o>&lt;</span><span class=nx>script</span><span class=o>&gt;</span>
+</span></span><span class=line><span class=cl>        <span class=kd>let</span> <span class=nx>btn</span> <span class=o>=</span> <span class=nb>document</span><span class=p>.</span><span class=nx>querySelector</span><span class=p>(</span><span class=s1>&#39;.btn&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>        <span class=kd>let</span> <span class=nx>i</span> <span class=o>=</span> <span class=mi>6</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>        <span class=kd>let</span> <span class=nx>timer</span> <span class=o>=</span> <span class=nx>setInterval</span><span class=p>(</span><span class=kd>function</span> <span class=nx>clocks</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=nx>i</span><span class=o>--</span>
+</span></span><span class=line><span class=cl>            <span class=nx>btn</span><span class=p>.</span><span class=nx>innerHTML</span> <span class=o>=</span> <span class=sb>`我已阅读用户协议(</span><span class=si>${</span><span class=nx>i</span><span class=si>}</span><span class=sb>)`</span>
+</span></span><span class=line><span class=cl>            <span class=k>if</span> <span class=p>(</span><span class=nx>i</span> <span class=o>===</span> <span class=mi>0</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>                <span class=c1>// 归零后清除定时器
+</span></span></span><span class=line><span class=cl><span class=c1></span>                <span class=nx>clearInterval</span><span class=p>(</span><span class=nx>timer</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>                    <span class=c1>//开启按钮
+</span></span></span><span class=line><span class=cl><span class=c1></span>                <span class=nx>btn</span><span class=p>.</span><span class=nx>disabled</span> <span class=o>=</span> <span class=kc>false</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>                <span class=c1>//更改文字
+</span></span></span><span class=line><span class=cl><span class=c1></span>                <span class=nx>btn</span><span class=p>.</span><span class=nx>innerHTML</span> <span class=o>=</span> <span class=s1>&#39;同意&#39;</span>
+</span></span><span class=line><span class=cl>            <span class=p>}</span>
+</span></span><span class=line><span class=cl>        <span class=p>},</span> <span class=mi>1000</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=o>&lt;</span><span class=err>/script&gt;</span>
+</span></span><span class=line><span class=cl><span class=o>&lt;</span><span class=err>/body&gt;</span>
+</span></span></code></pre></td></tr></table></div></div></article><hr><div class=page-end id=footer><div class=backlinks-container><h3>Backlinks</h3><ul class=backlinks><li><a href=/ data-ctx="Web APIs" data-src=/ class=internal-link>Archive | Lyin's Room</a></li></ul></div><div><script src=https://cdn.jsdelivr.net/npm/d3@6.7.0/dist/d3.min.js integrity="sha256-+7jaYCp29O1JusNWHaYtgUn6EhuP0VaFuswhNV06MyI=" crossorigin=anonymous></script><h3>Interactive Graph</h3><div id=graph-container></div><style>:root{--g-node:var(--secondary);--g-node-active:var(--primary);--g-node-inactive:var(--visited);--g-link:var(--outlinegray);--g-link-active:#5a7282}</style><script src=https://c.gregueria.icu/js/graph.abd4bc2af3869a96524d7d23b76152c7.js></script></div></div><div id=contact_buttons><footer><p>Made by Lyin using <a href=https://github.com/jackyzha0/quartz>Quartz</a>, © 2022</p><ul><li><a href=https://c.gregueria.icu/>Home</a></li><li><a href=https://gregueria.icu>Sooo long and Thanks for All the fish :p</a></li></ul></footer></div></div></body></html>
