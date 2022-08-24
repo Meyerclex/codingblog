@@ -19,4 +19,8 @@
 		4. 最终得到是一个伪数组：想得到里面的每一个对象，需要进行遍历（for）获得。具有length属性、按索引方式存储数据、不具有数组的push、pop等方法。
 		5. 不管有几个标签，`querySelectorAll`得到的都是数组
 	3. 其他获取DOM元素方法
-		1. 根据id获取一个元素：`document.getElementById`
+		1. 根据id获取一个元素：`document.getElementById('')`
+		2. 根据标签获取一雷元素，获取页面所有div：`document.getElementByTagName('')`
+		3. 根据类名获取元素，获取页面所有类名为w的：`document.getElementByClassName('w')`
+## 设置/修改DOM元素内容
+1. `document.write()`：只能将文本内容追加到`</body>`前面的位置，文本中包含的标签会被解析。
