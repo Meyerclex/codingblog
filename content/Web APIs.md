@@ -84,3 +84,10 @@ box.style.marginTop = '50px'
 let box = document.querySelector('.one')
 box.className = 'one active'
 ```
+3. 通过classList操作类控制CSS
+为了解决className容易覆盖以前的类名，我们可以通过classList方式追加和删除类名。
+```js
+元素.classList.add('类名') // 追加一个类
+元素.classList.remove('类名') // 删除一个类
+元素.classList.toggle('类名') // 切换一个类
+```
