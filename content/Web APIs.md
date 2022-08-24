@@ -377,3 +377,10 @@ Task：点击开始随机抽取，点击结束输出结果
 	- DOM L1：DOM级别1于1998年成为W3C推荐标准
 	- DOM L2：使用addEventListener注册事件
 	- DOM L3：DOM3级时间模块在DOM2级事件的基础上重新定义了这些事件，也添加了一些新的事件类型
+### 事件类型
+1. 鼠标事件
+	1. `click`
+	2. `mouseenter` 鼠标经过
+	3. `mouseleave` 鼠标离开
+2. 焦点事件
+	1. 
