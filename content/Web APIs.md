@@ -8,4 +8,8 @@
 
 ## 获取DOM对象
 1. 根据CSS先择起来获取DOM元素
-	1. 选择匹配的第一个元素，语法：`document.querySelector('css选择器')`
+	1. 选择匹配的第一个元素
+		1. 语法：`document.querySelector('css选择器')`
+		2. 参数：包含一个或多个有效的CSS选择器（**字符串**）
+		3. 返回值：CSS选择器匹配的**第一个元素**，一个HTMLelement对象。如果没有匹配到则返回`null`。
+	2. 
