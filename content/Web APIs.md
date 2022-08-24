@@ -247,4 +247,50 @@ Task：点击小方块后，大小方块都关闭
 分析：
 1. 点击的是关闭按钮
 2. 关闭的是父盒子
-3. 核心：利用央视的现实和隐藏完成，`display: none; / display: block;`
+3. 核心：利用样式的显示和隐藏完成，`display: none; / display: block;`
+```js
+<head>
+    <style>
+        div {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            display: inline-block;
+            background-color: aquamarine;
+            margin: 40px;
+        }
+        
+        i {
+            position: absolute;
+            right: -13px;
+            border: 1px solid black;
+            background-color: black;
+            width: 10px;
+            height: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="qrcode">
+        <img src="" alt="">
+        <i class="closebtn"></i>
+    </div>
+    <script>
+        let closebtn = document.querySelector('.closebtn') // 事件源
+        let qrcode = document.querySelector('.qrcode')
+            // 事件监听
+        closebtn.addEventListener('click', function() {
+            qrcode.style.display = 'none';
+        })
+    </script>
+</body>
+```
+
+### 随机点名
+Task：点击按钮后随机显示一个名字，如果没有则显示禁用按钮
+
+分析：
+1. 点击的是按钮
+2. 随机抽取一个名字
+3. 当名字抽取完毕，则利用disabled设置为true
