@@ -1,2 +1,9 @@
+**Web APIs**
 1. 作用：使用JS去操作html和浏览器
 2. 分类：DOM（文档对象模型）、BOM（浏览器对象模型）
+
+DOM：用来呈现以及与任意html或xml文档交互的API，用来开发网页内容特效和实现用户交互。
+
+DOM树：将HTML文档以树状结构直观表现出来，我们称之为文档树或DOM树，描述王爷关系内容的名字，直观地体现了标签与标签之间的关系。
+
+DOM对象：浏览器根据html标签生成的JS对象，suo'you'biao'qian'shu'xing'dou'ke'yi'zai'zhe'ge'du
