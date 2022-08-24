@@ -19,6 +19,7 @@ tags:
 6. [[Scope 作用域]]
 	1. [[Block area 块作用域]]
 7. [[JavaScript内置对象]]
+8. [[Web APIs]]
 ## 📒HTML5 + CSS3 
 1. [[H5C3 Tips P1-200]]
 2. [[H5(Html5)+CSS3：P1-200]]
