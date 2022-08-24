@@ -16,3 +16,4 @@
 		1. 语法：`document.querySelectorAll('css选择器')`
 		2. 参数：包含一个或多个有效的CSS选择器
 		3. 返回值：CSS选择器匹配的NodeList（对象集合）
+		4. 最终得到是一个伪数组：想得到里面的每一个对象，需要进行遍历（for）获得。具有length属性、按索引方式存储数据、不具有数组的push、pop等方法。
