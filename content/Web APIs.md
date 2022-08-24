@@ -74,4 +74,11 @@ box.style.backgroundColor = 'red';
 box.style.width = '300px'
 box.style.marginTop = '50px'
 ```
-2. 
+2. 操作类名（className）操作CSS
+如果修改的样式比较多，直接通过style属性修改比较繁琐，我们可以通过借助css类名的形式。
+	1. 语法：`元素.className = 'active'`
+	2. 由于class是关键字，所以使用className去代替
+	3. className时使用新值替换旧值，如果需要添加一个类，需要保留之前的类名
+```js
+box.className = active''
+```
