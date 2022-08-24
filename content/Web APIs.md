@@ -80,5 +80,6 @@ box.style.marginTop = '50px'
 	2. 由于class是关键字，所以使用className去代替
 	3. className时使用新值替换旧值，如果需要添加一个类，需要保留之前的类名
 ```js
-box.className = active''
+let box = document.querySelector('.box')
+box.className = 'active'
 ```
