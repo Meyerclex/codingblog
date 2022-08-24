@@ -181,3 +181,34 @@ Task：每隔一秒钟切换一次图片
 4. 处理图片自动复原从头播放
 	1. 如果图片播放到最后一张就是第9张
 	2. 则把变量重置为0
+```js
+    <div class="img-box">
+        <img src="images/1.png" alt="" class="pic">
+        <div class="tip">
+            <h3 class="text">title1</h3>
+        </div>
+    </div>
+    <script>
+        let data = [{ // 数组，内容是轮播图数据
+            title: 'title1',
+            imgSrc: "images/1.png"
+        }, {
+            title: 'title2',
+            imgSrc: "images/2.png"
+        }]
+        let pic = document.querySelector('.pic')
+        let text = document.querySelector('.text')
+        let i = 0 // 记录图片的张数
+        setInterval(function() {
+            i++
+            // 修改图片的src属性和title
+            pic.src = data[i].imgSrc
+            text.innerHTML = data[i].title
+            if (i === data.length) {
+                i == -1;
+                // 从第-1张开始。若从0开始，回到i++则为1，pic.src = data[1].title，将跳过第0张图
+                // 三元表达式：i === data.length ? i == -1 : i
+            }
+        }, 1000)
+    </script>
+```
