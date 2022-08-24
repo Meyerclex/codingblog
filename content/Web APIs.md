@@ -99,3 +99,12 @@ box.className = 'one active'
 表单.value = 'username'
 表单.type = 'password'
 ```
+表单属性中添加就有效果、一出就没有效果，一律使用布尔值表示，如果位`true`代表添加了该属性，如果为`false`代表移除了该属性，比如：disabled、checked、selected。
+
+```js
+    <button disabled>button</button>
+    <script>
+        let btn = document.querySelector('button')
+        btn.disabled = false
+    </script>
+```
