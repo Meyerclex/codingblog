@@ -366,3 +366,14 @@ Task：点击开始随机抽取，点击结束输出结果
     </script>
 </body>
 ```
+
+### 事件监听版本
+- DOM L0
+	- `事件源.on事件 = function() {}`
+- DOM L2
+	- `事件源.addEventListener(事件，事件处理函数)`
+- 发展史
+	- DOM L0：是DOM发展的第一个版本
+	- DOM L1：DOM级别1于1998年成为W3C推荐标准
+	- DOM L2：使用addEventListener注册事件
+	- DOM L3：DOM3级时间模块在DOM2级事件的基础上重新定义了zh
