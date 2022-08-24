@@ -32,3 +32,26 @@ tags:
 1. `document.write()`：只能将文本内容追加到`</body>`前面的位置，文本中包含的标签会被解析。
 2. 元素`.innerText`属性：将文本内容添加/更新到任意标签位置，文本中包含的标签不会被解析（在里面写标签不会被识别）。
 3. 元素`.innerHTML`属性：文本中包含的标签会被解析。
+```js
+    <h3>随机点名</h3>
+    <div>
+        抽中的选手：<span></span>
+    </div>
+    <script>
+        let box = document.querySelector('span') // box是对象，innerText是属性
+        function getRandom(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min
+        }
+        // 声明一个数组
+        let arr = ['tim', 'rob', 'bob', 'allen', 'emily', 'joy', 'muse', 'casio', 'may']
+            // 生成一个随机数，作为数组索引号
+        let random = getRandom(0, arr.length - 1);
+        // console.log(random)
+        // document.write(arr[random])
+        box.innerHTML = arr[random]
+        // 为了不重复，删除名字
+        // arr.splice(从哪里开始删，删几个)
+        arr.splice(random, 1)
+            // console.log(arr)
+    </script>
+```
