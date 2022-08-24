@@ -326,3 +326,43 @@ Task：点击开始随机抽取，点击结束输出结果
 2. 点击结束按钮删除数组当前抽取的一个数据
 3. 当抽取到最后一个数据的时候两个按钮同时禁用
 4. 利用定时器快速展示，停止计时器结束展示
+
+```js
+<body>
+    <h3>定时器随机点名</h3>
+    <div></div>
+    <button class="start">Start</button>
+    <button class="over">Over</button>
+    <script>
+        let box = document.querySelector('div')
+        let btn = document.querySelectorAll('button')
+        let btnstart = document.querySelector('.start')
+        let btnover = document.querySelector('.over')
+            // 随机函数
+        function getRandom(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min
+        }
+        let arr = ['tim', 'rob', 'bob']
+            // let声明块级作用域，想在两个块级作用域引用需要在开始声明
+        let timer = 0;
+        let random = 0;
+        // 给开始按钮注册时间
+        btnstart.addEventListener('click', function() {
+                timer = setInterval(function() { // let是局部变量，外部无法使用，需要事先声明
+                    random = getRandom(0, arr.length - 1) // 放在定时器内部，才能产生不同的random，random的声明要放在全局
+                    box.innerHTML = arr[random]
+                    if (arr.length === 1) {
+                        btnstart.disabled = btnover.disabled = true;
+                        btnstart.innerHTML = '抽完了'
+                            // 点开始后，如果是数组最后一个人显示，则两个按钮禁用
+                    }
+                }, 50)
+            })
+            // 给结束按钮注册时间，停止计时器要放在
+        btnover.addEventListener('click', function() {
+            clearInterval(timer)
+            arr.splice(random, 1)
+        })
+    </script>
+</body>
+```
