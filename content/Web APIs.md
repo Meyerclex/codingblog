@@ -126,9 +126,20 @@ let timer1 = setInterval(show, 1000)
 let timer2 = setInterval(show, 1000)
 // 打印出来的结果分别为1和2，显示返回值是第几个计时器
 ```
+
 返回值`intervalID`是一个非零数值，用来标识通过`setInterval()`创建的计时器，这个值可以用来作为`clearInterval()`的参数来清除对应的计时器。
--
+
 ```js
 let 变量名 = setInterval(函数, 间隔时间)
 clearInterval(变量名) // 清除定时器
 ```
+
+### 倒计时效果
+Task：按钮60秒后才可以使用
+分析：
+1. 开始先把按钮禁用disabled
+2. 获取元素
+3. 函数内处理逻辑
+	1. 秒数开始倒减
+	2. 按钮里的文字跟着一起变化
+	3. 秒数为0停止计时器，里面的文字变为“同意”，最后按钮可以点击
