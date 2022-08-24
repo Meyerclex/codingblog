@@ -46,6 +46,22 @@ while (true) {
 }
 // 限制猜的次数，可以用for循环
 ```
+### 随机点名
+```js
+        function getRandom(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min
+        }
+        // 声明一个数组
+        let arr = ['tim', 'rob', 'bob', 'allen', 'emily', 'joy', 'muse', 'casio', 'may']
+            // 生成一个随机数，作为数组索引号
+        let random = getRandom(0, arr.length - 1);
+        console.log(random)
+        document.write(arr[random])
+            // 为了不重复，删除名字
+            // arr.splice(从哪里开始删，删几个)
+        arr.splice(random, 1)
+        console.log(arr)
+```
 
 ## `Date`日期对象
 `Date`是一个构造函数，因此需要用`new`来调用创建。若将它作为常规函数调用（即不加`new`操作符），将返回一个字符串，而非 `Date` 对象。
