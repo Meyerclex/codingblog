@@ -103,8 +103,18 @@ box.className = 'one active'
 
 ```js
     <button disabled>button</button>
+    <input type="checkbox" name="" id="" class="cbox" checked>
     <script>
         let btn = document.querySelector('button')
-        btn.disabled = false
-    </script>
+        btn.disabled = false // 让按钮启用
+        //复选框
+        let cbox = querySelector('.cbox')
+		checkbox.checked = false
+		</script>
 ```
+
+## 定时器-间歇函数
+- 网页中经常会需要每隔一段时间需要自动执行一段代码，不需要手动触发，例如：倒计时。要实现这种需求需要定时器函数。
+- 定时器函数可以开启和关闭定时器。
+- 开启定时器：`setInterval(函数, 间隔时间)`，作用是每隔一段时间调用一次函数，间隔时间单位是毫秒。
+- 
