@@ -143,3 +143,29 @@ Task：按钮60秒后才可以使用
 	1. 秒数开始倒减
 	2. 按钮里的文字跟着一起变化
 	3. 秒数为0停止计时器，里面的文字变为“同意”，最后按钮可以点击
+```js
+<body>
+    <textarea name="" id="" cols="30" rows="10">
+        用户注册协议
+    </textarea>
+    <br>
+    <button class="btn" disabled>我已阅读用户协议(6)</button>
+
+    <script>
+        let btn = document.querySelector('.btn')
+        let i = 6;
+        let timer = setInterval(function clocks() {
+            i--
+            btn.innerHTML = `我已阅读用户协议(${i})`
+            if (i === 0) {
+                // 归零后清除定时器
+                clearInterval(timer)
+                    //开启按钮
+                btn.disabled = false;
+                //更改文字
+                btn.innerHTML = '同意'
+            }
+        }, 1000)
+    </script>
+</body>
+```
