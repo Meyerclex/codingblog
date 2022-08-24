@@ -64,3 +64,6 @@ let pic = document.querySelector('img') // 获取
 pic.src = './images/1.jpg' // 修改
 pic.title = 'picture'
 ```
+
+### 设置修改元素样式属性
+1. 通过styleshu'xing
