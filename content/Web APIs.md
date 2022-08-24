@@ -232,3 +232,13 @@ alert('被点击了')
 1. 事件类型要加引号
 2. 函数时点击之后再去执行，每次点击都会执行一次
 
+```js
+    <button>Click me</button>
+    <script>
+        let btn = document.querySelector('button')
+        btn.addEventListener('click', function() {
+            alert('test')
+        })
+    </script>
+```
+
