@@ -87,7 +87,7 @@ box.className = 'one active'
 3. 通过classList操作类控制CSS
 为了解决className容易覆盖以前的类名，我们可以通过classList方式追加和删除类名。
 ```js
-元素.classList.add('类名') // 追加一个类
+元素.classList.add('类名') // 在原类后面追加一个类
 元素.classList.remove('类名') // 删除一个类
-元素.classList.toggle('类名') // 切换一个类
+元素.classList.toggle('类名') // 切换一个类，如果这个类存在则删除，如果类不存在则追加
 ```
