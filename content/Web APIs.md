@@ -55,3 +55,12 @@ tags:
             // console.log(arr)
     </script>
 ```
+### 设置修改元素常用属性
+- 还可以通过JS设置/修改元素属性，比如通过`src`更换图片
+- 最常见的属性比如：`href`、`title`、`src`等
+- 语法：`对象.属性 = 值`
+```js
+let pic = document.querySelector('img') // 获取
+pic.src = './images/1.jpg' // 修改
+pic.title = 'picture'
+```
