@@ -1,3 +1,9 @@
+---
+title: "Web APIs"
+tags: 
+- JavaScript
+---
+
 - **Web APIs**
 	1. 作用：使用JS去操作html和浏览器
 	2. 分类：DOM（文档对象模型）、BOM（浏览器对象模型）
