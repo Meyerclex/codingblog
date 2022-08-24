@@ -294,3 +294,26 @@ Task：点击按钮后随机显示一个名字，如果没有则显示禁用按�
 1. 点击的是按钮
 2. 随机抽取一个名字
 3. 当名字抽取完毕，则利用disabled设置为true
+```js
+    <div></div>
+    <button>click</button>
+    <script>
+        let box = document.querySelector('div')
+        let btn = document.querySelector('button')
+            // 随机函数
+        function getRandom(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min
+        }
+        let arr = ['tim', 'rob', 'bob', 'allen', 'emily', 'joy', 'muse', 'casio', 'may']
+        btn.addEventListener('click', function() {
+            let random = getRandom(0, arr.length - 1);
+            box.innerHTML = arr[random] // 盒子里面的文字为数组里的名字
+            arr.splice(random, 1)
+                // 如果数组里面剩下最后一个，则禁用按钮
+            if (arr.length === 0) {
+                btn.disabled = true;
+                btn.innerHTML = '已经抽完'
+            }
+        })
+    </script>
+```
