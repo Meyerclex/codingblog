@@ -127,3 +127,8 @@ let timer2 = setInterval(show, 1000)
 // 打印出来的结果分别为1和2，显示返回值是第几个计时器
 ```
 返回值`intervalID`是一个非零数值，用来标识通过`setInterval()`创建的计时器，这个值可以用来作为`clearInterval()`的参数来清除对应的计时器。
+-
+```js
+let 变量名 = setInterval(函数, 间隔时间)
+clearInterval(变量名) // 清除定时器
+```
