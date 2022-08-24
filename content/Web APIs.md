@@ -66,4 +66,12 @@ pic.title = 'picture'
 ```
 
 ### 设置修改元素样式属性
-1. 通过styleshu'xing
+1. 通过style属性操作CSS
+	1. 语法：`对象.style.样式属性 = 值`，如果属性有-连接符，需要转化为小驼峰命名法
+```js
+let box = document.querySelector('.box')
+box.style.backgroundColor = 'red';
+box.style.width = '300px'
+box.style.marginTop = '50px'
+```
+2. 
