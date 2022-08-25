@@ -407,3 +407,12 @@ Task：点击开始随机抽取，点击结束输出结果
 ### 节点操作
 - 查找节点
 	- 父节点查找：`子元素.parentNode`属性。返回最近一级的节点，找不到返回为`null`
+```js
+<div clas="parent">
+	<div class="son">son</div>
+</div>
+<script>
+	let son = document.querySelector('.son')
+	son.parentNode.style.display = 'none'
+</script>
+```
