@@ -121,3 +121,13 @@ x => {
     return sum;
 }
 ```
+
+## 回调函数
+- 如果将函数A作为参数传递给函数B时，我们称函数A为回调函数。
+- 常见使用场景：
+```js
+function fn() {
+console.log('test')
+} // fn为回调函数，不被立即执行，之后被调用
+setInterval(fn, 1000)
+```
