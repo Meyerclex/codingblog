@@ -405,11 +405,12 @@ Task：点击开始随机抽取，点击结束输出结果
 	3. 文本节点：所有的文本
 	4. 其他
 ### 节点操作
-- 查找节点
+- **查找节点**
 	- 父节点查找：`子元素.parentNode`，返回最近一级的节点，找不到返回为`null`
 	- 子节点查找
 		- `childNodes`，获得所有子节点，包括文本节点、注释节点等
 		- `父元素.children`，仅获得所有元素节点，返回的还是一个伪数组
+	- 兄弟关系查找:`nextElementSibling`下一个节点、`previousElementSibling`前一个节点
 ```js
 <div clas="parent">
 	<div class="son">son</div>
@@ -419,3 +420,6 @@ Task：点击开始随机抽取，点击结束输出结果
 	son.parentNode.style.display = 'none'
 </script>
 ```
+- **增加节点**
+	1. 创建节点：创造出一个新的网页元素，在添加到网页内，一般先创建节点，然后插入节点
+	- `document.createElement('标签名')`
