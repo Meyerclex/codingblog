@@ -12,6 +12,7 @@ tags:
 2. [[Function 函数]]
 3. [[Array 数组]]
 4. [[Object 对象]]
+	1. [[Date object 时间对象]]
 5. [[Loop 循环]]
 6. [[Scope 作用域]]
 	1. [[Block area 块作用域]]
