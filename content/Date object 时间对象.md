@@ -72,3 +72,15 @@ h = parseInt(总秒数 / 60 /60 %24) // 小时
 m = parseInt(总秒数 / 60 %60) 
 s = parseInt(总秒数 %60) // 计算当前秒数
 ```
+
+```js
+let now = +new Date();
+let last = +new Date('2022-8-27 19:00:00')
+let count = (last - now) / 1000 //剩余的秒数
+// 转换为时分秒
+let d = parseInt(count / 60 /60 /24)； // 天数
+let h = parseInt(count / 60 /60 %24) // 小时
+let m = parseInt(count / 60 %60) 
+let s = parseInt(count %60) // 计算当前秒数
+console.log(d, h, m )
+```
