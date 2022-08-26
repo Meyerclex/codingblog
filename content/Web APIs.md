@@ -429,3 +429,15 @@ Task：点击开始随机抽取，点击结束输出结果
 	- [[追加节点案例]]
 	3. 克隆节点：`元素.cloneNode(布尔值)`
 	- 会克隆出一个跟源标签一样的元素，括号内传入布尔值，若为`true`，则代表克隆时会包含后代节点一起克隆，若为`false`，则代表克隆时不包含后代节点，默认为`false`
+```js
+<body>
+	<ul><li>content</li></ul>
+	<script>
+	let ul = document.querySelector('ul')
+	let newUl = ul.cloneNode(true)
+	document.ul.appendChild(newUl)
+	</script>
+</body>
+```
+- **删除节点**
+	- ruo'yi'ge
