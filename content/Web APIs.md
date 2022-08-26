@@ -440,4 +440,20 @@ Task：点击开始随机抽取，点击结束输出结果
 </body>
 ```
 - **删除节点**
-	- ruo'yi'ge
+	- 若一个节点在页面中已不需要时，可以删除它
+	- 在 JavaScript 原生DOM操作中，要删除元素必须通过父元素删除
+	- `父元素.removeChild(要删除的元素)`
+	- 如不存在父子关系则删除不成功 
+	- 删除节点和隐藏节点（display:none） 有区别的： 隐藏节点还是存在的，但是删除则从html中删除节点  
+```js
+	<button>click</button>
+	<ul><li>content</li></ul>
+	<script>
+	let btn = document.querySelector('button')
+	let ul = document.querySelector('ul')
+	btn.addEventListener('click', function() {
+	ul.removeChild(ul.children)
+	})
+	document.ul.appendChild(newUl)
+	</script>
+```
