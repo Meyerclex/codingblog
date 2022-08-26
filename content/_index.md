@@ -5,7 +5,7 @@ tags:
 ---
 
 ## 🖼️ About 
-这里是Lyin有关代码的笔记。
+这里是Lyin的笔记。
 
 ## 🖋️JavaScript
 1. [[The complete JavaScript Course 2022]]
