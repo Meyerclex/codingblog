@@ -452,8 +452,7 @@ Task：点击开始随机抽取，点击结束输出结果
 	let btn = document.querySelector('button')
 	let ul = document.querySelector('ul')
 	btn.addEventListener('click', function() {
-	ul.removeChild(ul.children)
+	ul.removeChild(ul.children[0])
 	})
-	document.ul.appendChild(newUl)
 	</script>
 ```
