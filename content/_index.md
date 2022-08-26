@@ -10,6 +10,7 @@ tags:
 ## 🖋️JavaScript
 1. [[The complete JavaScript Course 2022]]
 2. [[Function 函数]]
+	1. [[sort()排序]]
 3. [[Array 数组]]
 4. [[Object 对象]]
 	1. [[Date object 时间对象]]
