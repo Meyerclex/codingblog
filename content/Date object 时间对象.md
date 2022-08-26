@@ -82,5 +82,5 @@ let d = parseInt(count / 60 /60 /24)； // 天数
 let h = parseInt(count / 60 /60 %24) // 小时
 let m = parseInt(count / 60 %60) 
 let s = parseInt(count %60) // 计算当前秒数
-console.log(d, h, m )
+console.log(d, h, m, s)
 ```
