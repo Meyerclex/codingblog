@@ -18,3 +18,4 @@ tags:
 let timer = setTimeout(回调函数, 等待的毫秒数)
 clearTimeout(timer)
 ```
+- 
