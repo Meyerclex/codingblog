@@ -10,7 +10,7 @@ tags:
 - 注：依附于 window 对象的所有属性和方法，使用时可以省略 window
 ![](https://raw.githubusercontent.com/Meyerclex/image/main/20220903152235.png)
 1. 定时器-延时函数
-- JavaScript 内置的一个用来让代码延迟执行的函数，叫 setTimeout
+- JavaScript 内置的一个用来让代码延迟执行的函数，叫 `setTimeout`
 - `setTimeout(回调函数, 等待的毫秒数)`
 - setTimeout 仅仅只执行一次，所以可以理解为就是把一段代码延迟执行, 平时省略window
 - 清除延时函数：
@@ -18,4 +18,4 @@ tags:
 let timer = setTimeout(回调函数, 等待的毫秒数)
 clearTimeout(timer)
 ```
-- 
+- 结合递归函数可以使用 `setTimeout` 实现 `setInterval` 一样的功能
