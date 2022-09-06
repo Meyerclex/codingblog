@@ -1,0 +1,79 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=description content="异步操作的模式 回调函数 回调函数是异步操作最基本的方法。
+下面是两个函数f1和f2，编程的意图是f2必须等到f1执行完成，才能执行。
+1 2 3 4 5 6 7 8 9 10  function f1() { // ... } function f2() { // ... } f1(); f2();   上面代码的问题在于，如果f1是异步操作，f2会立即执行，不会等到f1结束再执行。
+这时，可以考虑改写f1，把f2写成f1的回调函数。
+1 2 3 4 5 6 7 8 9 10  function f1(callback) { // ."><title>异步操作</title><meta name=viewport content="width=device-width,initial-scale=1"><link rel="shortcut icon" type=image/png href=https://c.gregueria.icu//icon.png><link href=https://c.gregueria.icu/styles.d2f738589684858118a26e4c88e3fef5.min.css rel=stylesheet><link href=https://c.gregueria.icu/styles/_light_syntax.86a48a52faebeaaf42158b72922b1c90.min.css rel=stylesheet id=theme-link><script src=https://c.gregueria.icu/js/darkmode.6227d5566c0c73d48260f003afbe51b7.min.js></script>
+<script src=https://c.gregueria.icu/js/util.9825137f5e7825e8553c68ce39ac9e44.min.js></script>
+<link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css integrity=sha384-R4558gYOUz8mP9YWpZJjofhk+zx0AS11p36HnD2ZKj/6JR5z27gSSULCNHIRReVs crossorigin=anonymous><script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js integrity=sha384-z1fJDqw8ZApjGO3/unPWUPsIymfsJmyrDVWC8Tv/a1HeOtGmkwNd/7xUS0Xcnvsx crossorigin=anonymous></script>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/auto-render.min.js integrity=sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR crossorigin=anonymous></script>
+<script src=https://unpkg.com/@floating-ui/core@0.7.3></script>
+<script src=https://unpkg.com/@floating-ui/dom@0.5.4></script>
+<script src=https://c.gregueria.icu/js/popover.37b1455b8f0603154072b9467132c659.min.js></script>
+<script src=https://c.gregueria.icu/js/code-title.b35124ad8db0ba37162b886afb711cbc.min.js></script>
+<script src=https://c.gregueria.icu/js/clipboard.c20857734e53a3fb733b7443879efa61.min.js></script>
+<script src=https://c.gregueria.icu/js/callouts.7723cac461d613d118ee8bb8216b9838.min.js></script>
+<script>const BASE_URL="https://c.gregueria.icu/",fetchData=Promise.all([fetch("https://c.gregueria.icu/indices/linkIndex.12bad80f8aac6d8cfaf0d548bba2f2f3.min.json").then(e=>e.json()).then(e=>({index:e.index,links:e.links})),fetch("https://c.gregueria.icu/indices/contentIndex.6f49b4dda451bc80c164a8b294543d76.min.json").then(e=>e.json())]).then(([{index:e,links:t},n])=>({index:e,links:t,content:n})),render=()=>{const e=new URL(BASE_URL),t=e.pathname,n=window.location.pathname,s=t==n;addCopyButtons(),addTitleToCodeBlocks(),addCollapsibleCallouts(),initPopover("https://c.gregueria.icu",!0,!0);const o=document.getElementById("footer");if(o){const e=document.getElementById("graph-container");if(!e)return requestAnimationFrame(render);e.textContent="";const t=s&&!1;drawGraph("https://c.gregueria.icu",t,[{"/moc":"#4388cc"}],t?{centerForce:1,depth:-1,enableDrag:!0,enableLegend:!1,enableZoom:!0,fontSize:.5,linkDistance:1,opacityScale:3,repelForce:1,scale:1.4}:{centerForce:1,depth:1,enableDrag:!0,enableLegend:!1,enableZoom:!0,fontSize:.6,linkDistance:1,opacityScale:3,repelForce:2,scale:1.2})}},init=(e=document)=>{addCopyButtons(),addTitleToCodeBlocks(),renderMathInElement(e.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1}],throwOnError:!1})}</script><script type=module>
+    import { attachSPARouting } from "https:\/\/c.gregueria.icu\/js\/router.9d4974281069e9ebb189f642ae1e3ca2.min.js"
+    attachSPARouting(init, render)
+  </script></head><script async src="https://www.googletagmanager.com/gtag/js?id=G-XYFD95KB4J"></script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-XYFD95KB4J",{anonymize_ip:!1})}</script><body><div id=search-container><div id=search-space><input autocomplete=off id=search-bar name=search type=text aria-label=Search placeholder="Search for something..."><div id=results-container></div></div></div><script src=https://cdn.jsdelivr.net/npm/flexsearch@0.7.21/dist/flexsearch.bundle.js integrity="sha256-i3A0NZGkhsKjVMzFxv3ksk0DZh3aXqu0l49Bbh0MdjE=" crossorigin=anonymous defer></script>
+<script defer src=https://c.gregueria.icu/js/full-text-search.24827f874defbbc6d529926cbfcfb493.min.js></script><div class=singlePage><header><h1 id=page-title><a href=https://c.gregueria.icu/>🖼️ Lyin's Room</a></h1><div class=spacer></div><div id=search-icon><p>Search</p><svg tabindex="0" aria-labelledby="title desc" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title id="title">Search Icon</title><desc id="desc">Icon to open search</desc><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"/><circle cx="8" cy="8" r="7"/></g></svg></div><div class=darkmode><input class=toggle id=darkmode-toggle type=checkbox tabindex=-1>
+<label id=toggle-label-light for=darkmode-toggle tabindex=-1><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="dayIcon" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35"><title>Light Mode</title><path d="M6 17.5C6 16.672 5.328 16 4.5 16h-3C.672 16 0 16.672.0 17.5S.672 19 1.5 19h3C5.328 19 6 18.328 6 17.5zM7.5 26c-.414.0-.789.168-1.061.439l-2 2C4.168 28.711 4 29.086 4 29.5 4 30.328 4.671 31 5.5 31c.414.0.789-.168 1.06-.44l2-2C8.832 28.289 9 27.914 9 27.5 9 26.672 8.329 26 7.5 26zm10-20C18.329 6 19 5.328 19 4.5v-3C19 .672 18.329.0 17.5.0S16 .672 16 1.5v3C16 5.328 16.671 6 17.5 6zm10 3c.414.0.789-.168 1.06-.439l2-2C30.832 6.289 31 5.914 31 5.5 31 4.672 30.329 4 29.5 4c-.414.0-.789.168-1.061.44l-2 2C26.168 6.711 26 7.086 26 7.5 26 8.328 26.671 9 27.5 9zM6.439 8.561C6.711 8.832 7.086 9 7.5 9 8.328 9 9 8.328 9 7.5c0-.414-.168-.789-.439-1.061l-2-2C6.289 4.168 5.914 4 5.5 4 4.672 4 4 4.672 4 5.5c0 .414.168.789.439 1.06l2 2.001zM33.5 16h-3c-.828.0-1.5.672-1.5 1.5s.672 1.5 1.5 1.5h3c.828.0 1.5-.672 1.5-1.5S34.328 16 33.5 16zM28.561 26.439C28.289 26.168 27.914 26 27.5 26c-.828.0-1.5.672-1.5 1.5.0.414.168.789.439 1.06l2 2C28.711 30.832 29.086 31 29.5 31c.828.0 1.5-.672 1.5-1.5.0-.414-.168-.789-.439-1.061l-2-2zM17.5 29c-.829.0-1.5.672-1.5 1.5v3c0 .828.671 1.5 1.5 1.5s1.5-.672 1.5-1.5v-3C19 29.672 18.329 29 17.5 29zm0-22C11.71 7 7 11.71 7 17.5S11.71 28 17.5 28 28 23.29 28 17.5 23.29 7 17.5 7zm0 18c-4.136.0-7.5-3.364-7.5-7.5s3.364-7.5 7.5-7.5 7.5 3.364 7.5 7.5S21.636 25 17.5 25z"/></svg></label><label id=toggle-label-dark for=darkmode-toggle tabindex=-1><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="nightIcon" viewBox="0 0 100 100" style="enable-background='new 0 0 100 100'"><title>Dark Mode</title><path d="M96.76 66.458c-.853-.852-2.15-1.064-3.23-.534-6.063 2.991-12.858 4.571-19.655 4.571C62.022 70.495 50.88 65.88 42.5 57.5 29.043 44.043 25.658 23.536 34.076 6.47c.532-1.08.318-2.379-.534-3.23-.851-.852-2.15-1.064-3.23-.534-4.918 2.427-9.375 5.619-13.246 9.491-9.447 9.447-14.65 22.008-14.65 35.369.0 13.36 5.203 25.921 14.65 35.368s22.008 14.65 35.368 14.65c13.361.0 25.921-5.203 35.369-14.65 3.872-3.871 7.064-8.328 9.491-13.246C97.826 68.608 97.611 67.309 96.76 66.458z"/></svg></label></div></header><article><h1>异步操作</h1><p class=meta>Last updated
+Unknown</p><ul class=tags><li><a href=https://c.gregueria.icu/tags/JavaScript/>Java script</a></li></ul><a href=#异步操作的模式><h2 id=异步操作的模式><span class=hanchor arialabel=Anchor># </span>异步操作的模式</h2></a><a href=#回调函数><h3 id=回调函数><span class=hanchor arialabel=Anchor># </span>回调函数</h3></a><p>回调函数是异步操作最基本的方法。</p><p>下面是两个函数<code>f1</code>和<code>f2</code>，编程的意图是<code>f2</code>必须等到<code>f1</code>执行完成，才能执行。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>function f1() {
+</span></span><span class=line><span class=cl>  // ...
+</span></span><span class=line><span class=cl>}
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>function f2() {
+</span></span><span class=line><span class=cl>  // ...
+</span></span><span class=line><span class=cl>}
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>f1();
+</span></span><span class=line><span class=cl>f2();
+</span></span></code></pre></td></tr></table></div></div><p>上面代码的问题在于，如果<code>f1</code>是异步操作，<code>f2</code>会立即执行，不会等到<code>f1</code>结束再执行。</p><p>这时，可以考虑改写<code>f1</code>，把<code>f2</code>写成<code>f1</code>的回调函数。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>function f1(callback) {
+</span></span><span class=line><span class=cl>  // ...
+</span></span><span class=line><span class=cl>  callback();
+</span></span><span class=line><span class=cl>}
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>function f2() {
+</span></span><span class=line><span class=cl>  // ...
+</span></span><span class=line><span class=cl>}
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>f1(f2);
+</span></span></code></pre></td></tr></table></div></div><p>回调函数的优点是简单、容易理解和实现，缺点是不利于代码的阅读和维护，各个部分之间高度
+<a href=https://en.wikipedia.org/wiki/Coupling_%28computer_programming%29 rel=noopener>耦合</a>（coupling），使得程序结构混乱、流程难以追踪（尤其是多个回调函数嵌套的情况），而且每个任务只能指定一个回调函数。</p><a href=#事件监听><h3 id=事件监听><span class=hanchor arialabel=Anchor># </span>事件监听</h3></a><p>另一种思路是采用事件驱动模式。异步任务的执行不取决于代码的顺序，而取决于某个事件是否发生。</p><p>还是以<code>f1</code>和<code>f2</code>为例。首先，为<code>f1</code>绑定一个事件（这里采用的 jQuery 的
+<a href=https://api.jquery.com/on/ rel=noopener>写法</a>）。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>f1.on(&#39;done&#39;, f2);
+</span></span></code></pre></td></tr></table></div></div><p>上面这行代码的意思是，当<code>f1</code>发生<code>done</code>事件，就执行<code>f2</code>。然后，对<code>f1</code>进行改写：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>function f1() {
+</span></span><span class=line><span class=cl>  setTimeout(function () {
+</span></span><span class=line><span class=cl>    // ...
+</span></span><span class=line><span class=cl>    f1.trigger(&#39;done&#39;);
+</span></span><span class=line><span class=cl>  }, 1000);
+</span></span><span class=line><span class=cl>}
+</span></span></code></pre></td></tr></table></div></div><p>上面代码中，<code>f1.trigger('done')</code>表示，执行完成后，立即触发<code>done</code>事件，从而开始执行<code>f2</code>。</p><p>这种方法的优点是比较容易理解，可以绑定多个事件，每个事件可以指定多个回调函数，而且可以“
+<a href=https://en.wikipedia.org/wiki/Decoupling rel=noopener>去耦合</a>”（decoupling），有利于实现模块化。缺点是整个程序都要变成事件驱动型，运行流程会变得很不清晰。阅读代码的时候，很难看出主流程。</p></article><hr><div class=page-end id=footer><div class=backlinks-container><h3>Backlinks</h3><ul class=backlinks><li><a href=/ data-ctx=异步操作 data-src=/ class=internal-link>Archive | Lyin's Room</a></li></ul></div><div><script src=https://cdn.jsdelivr.net/npm/d3@6.7.0/dist/d3.min.js integrity="sha256-+7jaYCp29O1JusNWHaYtgUn6EhuP0VaFuswhNV06MyI=" crossorigin=anonymous></script><h3>Interactive Graph</h3><div id=graph-container></div><style>:root{--g-node:var(--secondary);--g-node-active:var(--primary);--g-node-inactive:var(--visited);--g-link:var(--outlinegray);--g-link-active:#5a7282}</style><script src=https://c.gregueria.icu/js/graph.abd4bc2af3869a96524d7d23b76152c7.js></script></div></div><div id=contact_buttons><footer><p>Made by Lyin using <a href=https://github.com/jackyzha0/quartz>Quartz</a>, © 2022</p><ul><li><a href=https://c.gregueria.icu/>Home</a></li><li><a href=https://gregueria.icu>Sooo long and Thanks for All the fish :p</a></li></ul></footer></div></div></body></html>
