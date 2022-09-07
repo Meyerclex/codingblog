@@ -1,0 +1,598 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=description content="let和const let
+ 具有块级作用域  1 2 3 4 5 6  for(var i = 0;i < 3;i++){ } console.log(i);//3 	for(let j = 0;j < 3;j++){ } console.log(j);//拨错：j is not defined   没有变量提升  1 2  console.log(a);//报错：a is not defined let a = 1;   具有暂时性死区  1 2 3 4 5 6  var num = 10; if(true){ console."><title>ES6</title><meta name=viewport content="width=device-width,initial-scale=1"><link rel="shortcut icon" type=image/png href=https://c.gregueria.icu//icon.png><link href=https://c.gregueria.icu/styles.d2f738589684858118a26e4c88e3fef5.min.css rel=stylesheet><link href=https://c.gregueria.icu/styles/_light_syntax.86a48a52faebeaaf42158b72922b1c90.min.css rel=stylesheet id=theme-link><script src=https://c.gregueria.icu/js/darkmode.6227d5566c0c73d48260f003afbe51b7.min.js></script>
+<script src=https://c.gregueria.icu/js/util.9825137f5e7825e8553c68ce39ac9e44.min.js></script>
+<link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css integrity=sha384-R4558gYOUz8mP9YWpZJjofhk+zx0AS11p36HnD2ZKj/6JR5z27gSSULCNHIRReVs crossorigin=anonymous><script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js integrity=sha384-z1fJDqw8ZApjGO3/unPWUPsIymfsJmyrDVWC8Tv/a1HeOtGmkwNd/7xUS0Xcnvsx crossorigin=anonymous></script>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/auto-render.min.js integrity=sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR crossorigin=anonymous></script>
+<script src=https://unpkg.com/@floating-ui/core@0.7.3></script>
+<script src=https://unpkg.com/@floating-ui/dom@0.5.4></script>
+<script src=https://c.gregueria.icu/js/popover.37b1455b8f0603154072b9467132c659.min.js></script>
+<script src=https://c.gregueria.icu/js/code-title.b35124ad8db0ba37162b886afb711cbc.min.js></script>
+<script src=https://c.gregueria.icu/js/clipboard.c20857734e53a3fb733b7443879efa61.min.js></script>
+<script src=https://c.gregueria.icu/js/callouts.7723cac461d613d118ee8bb8216b9838.min.js></script>
+<script>const BASE_URL="https://c.gregueria.icu/",fetchData=Promise.all([fetch("https://c.gregueria.icu/indices/linkIndex.665414e3d186da5cf16418fc1afcf6ec.min.json").then(e=>e.json()).then(e=>({index:e.index,links:e.links})),fetch("https://c.gregueria.icu/indices/contentIndex.232eb61ca748a7f322e1d2a859b2bbcc.min.json").then(e=>e.json())]).then(([{index:e,links:t},n])=>({index:e,links:t,content:n})),render=()=>{const e=new URL(BASE_URL),t=e.pathname,n=window.location.pathname,s=t==n;addCopyButtons(),addTitleToCodeBlocks(),addCollapsibleCallouts(),initPopover("https://c.gregueria.icu",!0,!0);const o=document.getElementById("footer");if(o){const e=document.getElementById("graph-container");if(!e)return requestAnimationFrame(render);e.textContent="";const t=s&&!1;drawGraph("https://c.gregueria.icu",t,[{"/moc":"#4388cc"}],t?{centerForce:1,depth:-1,enableDrag:!0,enableLegend:!1,enableZoom:!0,fontSize:.5,linkDistance:1,opacityScale:3,repelForce:1,scale:1.4}:{centerForce:1,depth:1,enableDrag:!0,enableLegend:!1,enableZoom:!0,fontSize:.6,linkDistance:1,opacityScale:3,repelForce:2,scale:1.2})}},init=(e=document)=>{addCopyButtons(),addTitleToCodeBlocks(),renderMathInElement(e.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1}],throwOnError:!1})}</script><script type=module>
+    import { attachSPARouting } from "https:\/\/c.gregueria.icu\/js\/router.9d4974281069e9ebb189f642ae1e3ca2.min.js"
+    attachSPARouting(init, render)
+  </script></head><script async src="https://www.googletagmanager.com/gtag/js?id=G-XYFD95KB4J"></script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-XYFD95KB4J",{anonymize_ip:!1})}</script><body><div id=search-container><div id=search-space><input autocomplete=off id=search-bar name=search type=text aria-label=Search placeholder="Search for something..."><div id=results-container></div></div></div><script src=https://cdn.jsdelivr.net/npm/flexsearch@0.7.21/dist/flexsearch.bundle.js integrity="sha256-i3A0NZGkhsKjVMzFxv3ksk0DZh3aXqu0l49Bbh0MdjE=" crossorigin=anonymous defer></script>
+<script defer src=https://c.gregueria.icu/js/full-text-search.24827f874defbbc6d529926cbfcfb493.min.js></script><div class=singlePage><header><h1 id=page-title><a href=https://c.gregueria.icu/>🖼️ Lyin's Room</a></h1><div class=spacer></div><div id=search-icon><p>Search</p><svg tabindex="0" aria-labelledby="title desc" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title id="title">Search Icon</title><desc id="desc">Icon to open search</desc><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"/><circle cx="8" cy="8" r="7"/></g></svg></div><div class=darkmode><input class=toggle id=darkmode-toggle type=checkbox tabindex=-1>
+<label id=toggle-label-light for=darkmode-toggle tabindex=-1><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="dayIcon" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35"><title>Light Mode</title><path d="M6 17.5C6 16.672 5.328 16 4.5 16h-3C.672 16 0 16.672.0 17.5S.672 19 1.5 19h3C5.328 19 6 18.328 6 17.5zM7.5 26c-.414.0-.789.168-1.061.439l-2 2C4.168 28.711 4 29.086 4 29.5 4 30.328 4.671 31 5.5 31c.414.0.789-.168 1.06-.44l2-2C8.832 28.289 9 27.914 9 27.5 9 26.672 8.329 26 7.5 26zm10-20C18.329 6 19 5.328 19 4.5v-3C19 .672 18.329.0 17.5.0S16 .672 16 1.5v3C16 5.328 16.671 6 17.5 6zm10 3c.414.0.789-.168 1.06-.439l2-2C30.832 6.289 31 5.914 31 5.5 31 4.672 30.329 4 29.5 4c-.414.0-.789.168-1.061.44l-2 2C26.168 6.711 26 7.086 26 7.5 26 8.328 26.671 9 27.5 9zM6.439 8.561C6.711 8.832 7.086 9 7.5 9 8.328 9 9 8.328 9 7.5c0-.414-.168-.789-.439-1.061l-2-2C6.289 4.168 5.914 4 5.5 4 4.672 4 4 4.672 4 5.5c0 .414.168.789.439 1.06l2 2.001zM33.5 16h-3c-.828.0-1.5.672-1.5 1.5s.672 1.5 1.5 1.5h3c.828.0 1.5-.672 1.5-1.5S34.328 16 33.5 16zM28.561 26.439C28.289 26.168 27.914 26 27.5 26c-.828.0-1.5.672-1.5 1.5.0.414.168.789.439 1.06l2 2C28.711 30.832 29.086 31 29.5 31c.828.0 1.5-.672 1.5-1.5.0-.414-.168-.789-.439-1.061l-2-2zM17.5 29c-.829.0-1.5.672-1.5 1.5v3c0 .828.671 1.5 1.5 1.5s1.5-.672 1.5-1.5v-3C19 29.672 18.329 29 17.5 29zm0-22C11.71 7 7 11.71 7 17.5S11.71 28 17.5 28 28 23.29 28 17.5 23.29 7 17.5 7zm0 18c-4.136.0-7.5-3.364-7.5-7.5s3.364-7.5 7.5-7.5 7.5 3.364 7.5 7.5S21.636 25 17.5 25z"/></svg></label><label id=toggle-label-dark for=darkmode-toggle tabindex=-1><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="nightIcon" viewBox="0 0 100 100" style="enable-background='new 0 0 100 100'"><title>Dark Mode</title><path d="M96.76 66.458c-.853-.852-2.15-1.064-3.23-.534-6.063 2.991-12.858 4.571-19.655 4.571C62.022 70.495 50.88 65.88 42.5 57.5 29.043 44.043 25.658 23.536 34.076 6.47c.532-1.08.318-2.379-.534-3.23-.851-.852-2.15-1.064-3.23-.534-4.918 2.427-9.375 5.619-13.246 9.491-9.447 9.447-14.65 22.008-14.65 35.369.0 13.36 5.203 25.921 14.65 35.368s22.008 14.65 35.368 14.65c13.361.0 25.921-5.203 35.369-14.65 3.872-3.871 7.064-8.328 9.491-13.246C97.826 68.608 97.611 67.309 96.76 66.458z"/></svg></label></div></header><article><h1>ES6</h1><p class=meta>Last updated
+Sep 7, 2022</p><ul class=tags><li><a href=https://c.gregueria.icu/tags/JavaScript/>Java script</a></li></ul><aside class=mainTOC><details><summary>Table of Contents</summary><nav id=TableOfContents><ol><li><a href=#let和const><code>let</code>和<code>const</code></a></li><li><a href=#解构赋值>解构赋值</a></li><li><a href=#模板字符串>模板字符串</a></li><li><a href=#对象属性的简写>对象属性的简写</a></li><li><a href=#箭头函数>箭头函数</a></li><li><a href=#函数参数的默认值>函数参数的默认值</a></li><li><a href=#剩余参数>剩余参数</a></li><li><a href=#扩展运算符>扩展运算符</a></li><li><a href=#symbol>Symbol</a></li><li><a href=#垃圾回收机制>垃圾回收机制</a></li><li><a href=#闭包-closure>闭包 Closure</a></li><li><a href=#变量提升>变量提升</a></li><li><a href=#函数提升>函数提升</a></li><li><a href=#动态参数>动态参数</a></li></ol></nav></details></aside><a href=#let和const><h2 id=let和const><span class=hanchor arialabel=Anchor># </span><code>let</code>和<code>const</code></h2></a><p><code>let</code></p><ol><li>具有块级作用域</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl>	<span class=k>for</span><span class=p>(</span><span class=kd>var</span> <span class=nx>i</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span><span class=nx>i</span> <span class=o>&lt;</span> <span class=mi>3</span><span class=p>;</span><span class=nx>i</span><span class=o>++</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>	<span class=p>}</span>
+</span></span><span class=line><span class=cl>	<span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>i</span><span class=p>);</span><span class=c1>//3
+</span></span></span><span class=line><span class=cl><span class=c1></span>	<span class=k>for</span><span class=p>(</span><span class=kd>let</span> <span class=nx>j</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span><span class=nx>j</span> <span class=o>&lt;</span> <span class=mi>3</span><span class=p>;</span><span class=nx>j</span><span class=o>++</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>	<span class=p>}</span>
+</span></span><span class=line><span class=cl>	<span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>j</span><span class=p>);</span><span class=c1>//拨错：j is not defined
+</span></span></span></code></pre></td></tr></table></div></div><ol start=2><li>没有变量提升</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>a</span><span class=p>);</span><span class=c1>//报错：a is not defined
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kd>let</span> <span class=nx>a</span> <span class=o>=</span> <span class=mi>1</span><span class=p>;</span>
+</span></span></code></pre></td></tr></table></div></div><ol start=3><li>具有暂时性死区</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kd>var</span> <span class=nx>num</span> <span class=o>=</span> <span class=mi>10</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=k>if</span><span class=p>(</span><span class=kc>true</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>	<span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>num</span><span class=p>);</span><span class=c1>//num is not defined
+</span></span></span><span class=line><span class=cl><span class=c1></span>	<span class=c1>//let会把变量固定在块级作用域中，而不去上一级作用域是否有这个变量
+</span></span></span><span class=line><span class=cl><span class=c1></span>	<span class=kd>let</span> <span class=nx>num</span> <span class=o>=</span> <span class=mi>1</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><ol start=4><li>不能重复声明</li></ol><p>下面这段代码的输出是什么？</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kd>var</span> <span class=nx>arr</span> <span class=o>=</span> <span class=p>[];</span>
+</span></span><span class=line><span class=cl><span class=k>for</span><span class=p>(</span><span class=kd>var</span> <span class=nx>i</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span><span class=nx>i</span> <span class=o>&lt;</span> <span class=mi>3</span><span class=p>;</span><span class=nx>i</span><span class=o>++</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>	<span class=nx>arr</span><span class=p>[</span><span class=nx>i</span><span class=p>]</span> <span class=o>=</span> <span class=kd>function</span><span class=p>(){</span>
+</span></span><span class=line><span class=cl>		<span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>i</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>	<span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=cm>/* i在全局作用域中，for循环结束之后，i的值是2,共用
+</span></span></span><span class=line><span class=cl><span class=cm>一个作用域下变量 */</span>
+</span></span><span class=line><span class=cl><span class=nx>arr</span><span class=p>[</span><span class=mi>0</span><span class=p>]();</span><span class=c1>//3
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>arr</span><span class=p>[</span><span class=mi>1</span><span class=p>]();</span><span class=c1>//3
+</span></span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kd>var</span> <span class=nx>arr</span> <span class=o>=</span> <span class=p>[];</span>
+</span></span><span class=line><span class=cl><span class=k>for</span><span class=p>(</span><span class=kd>let</span> <span class=nx>i</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span><span class=nx>i</span> <span class=o>&lt;</span> <span class=mi>3</span><span class=p>;</span><span class=nx>i</span><span class=o>++</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>	<span class=nx>arr</span><span class=p>[</span><span class=nx>i</span><span class=p>]</span> <span class=o>=</span> <span class=kd>function</span><span class=p>(){</span>
+</span></span><span class=line><span class=cl>		<span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>i</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>	<span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=cm>/* 每次循环都会产生一个块级作用域，每个块级作用域都对
+</span></span></span><span class=line><span class=cl><span class=cm>应一个值，函数对应那个作用域的值。 */</span>
+</span></span><span class=line><span class=cl><span class=nx>arr</span><span class=p>[</span><span class=mi>0</span><span class=p>]();</span><span class=c1>//0
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>arr</span><span class=p>[</span><span class=mi>1</span><span class=p>]();</span><span class=c1>//1
+</span></span></span></code></pre></td></tr></table></div></div><p><code>const</code>声明常量，常量就是值（内存地址）不能变化的量，也就是<code>const</code>锁定了内存地址的引用关系</p><ol><li>具有块级作用域</li><li>声明常量必须赋值</li><li>内存地址不能修改</li><li>不能重复声明</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kr>const</span> <span class=nx>a</span> <span class=o>=</span> <span class=mi>10</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=nx>a</span> <span class=o>=</span> <span class=mi>20</span><span class=p>;</span><span class=c1>//报错：Assignment to constant variable.
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=cm>/*arr 对应的是引用数据类型，修改这个数据内部的属性和值不会报错，当时给const定义的常量重新赋值一个新的值,就会报错 */</span>
+</span></span><span class=line><span class=cl><span class=kr>const</span> <span class=nx>arr</span> <span class=o>=</span> <span class=p>[</span><span class=mi>1</span><span class=p>,</span><span class=mi>2</span><span class=p>,</span><span class=mi>3</span><span class=p>];</span>
+</span></span><span class=line><span class=cl><span class=nx>arr</span><span class=p>[</span><span class=mi>1</span><span class=p>]</span> <span class=o>=</span> <span class=mi>2222</span><span class=p>;</span> <span class=c1>// 修改
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>arr</span><span class=p>);</span><span class=c1>// [1,2222,3]
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>arr</span> <span class=o>=</span> <span class=p>[</span><span class=mi>1</span><span class=p>,</span><span class=mi>2</span><span class=p>,</span><span class=mi>3</span><span class=p>,</span><span class=mi>4</span><span class=p>,</span><span class=mi>5</span><span class=p>];</span><span class=c1>// 报错：Assignment to constant variable.
+</span></span></span></code></pre></td></tr></table></div></div><a href=#解构赋值><h2 id=解构赋值><span class=hanchor arialabel=Anchor># </span>解构赋值</h2></a><ol><li>数组模型解构</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=c1>//数组模型解构
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=c1>//基本
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kd>let</span> <span class=p>[</span><span class=nx>a</span><span class=p>,</span> <span class=nx>b</span><span class=p>,</span> <span class=nx>c</span><span class=p>]</span> <span class=o>=</span> <span class=p>[</span><span class=mi>1</span><span class=p>,</span> <span class=mi>2</span><span class=p>,</span> <span class=mi>3</span><span class=p>];</span>
+</span></span><span class=line><span class=cl><span class=c1>// a = 1
+</span></span></span><span class=line><span class=cl><span class=c1>// b = 2
+</span></span></span><span class=line><span class=cl><span class=c1>// c = 3
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=c1>//嵌套
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kd>let</span> <span class=p>[</span><span class=nx>a</span><span class=p>,</span> <span class=p>[[</span><span class=nx>b</span><span class=p>],</span> <span class=nx>c</span><span class=p>]]</span> <span class=o>=</span> <span class=p>[</span><span class=mi>1</span><span class=p>,</span> <span class=p>[[</span><span class=mi>2</span><span class=p>],</span> <span class=mi>3</span><span class=p>]];</span>
+</span></span><span class=line><span class=cl><span class=c1>// a = 1
+</span></span></span><span class=line><span class=cl><span class=c1>// b = 2
+</span></span></span><span class=line><span class=cl><span class=c1>// c = 3
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=c1>//忽略
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kd>let</span> <span class=p>[</span><span class=nx>a</span><span class=p>,</span> <span class=p>,</span> <span class=nx>b</span><span class=p>]</span> <span class=o>=</span> <span class=p>[</span><span class=mi>1</span><span class=p>,</span> <span class=mi>2</span><span class=p>,</span> <span class=mi>3</span><span class=p>];</span>
+</span></span><span class=line><span class=cl><span class=c1>// a = 1
+</span></span></span><span class=line><span class=cl><span class=c1>// b = 3
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=c1>//不完全解构
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kd>let</span> <span class=p>[</span><span class=nx>a</span> <span class=o>=</span> <span class=mi>1</span><span class=p>,</span> <span class=nx>b</span><span class=p>]</span> <span class=o>=</span> <span class=p>[];</span> <span class=c1>// a = 1, b = undefined
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=c1>//剩余运算符
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kd>let</span> <span class=p>[</span><span class=nx>a</span><span class=p>,</span> <span class=p>...</span><span class=nx>b</span><span class=p>]</span> <span class=o>=</span> <span class=p>[</span><span class=mi>1</span><span class=p>,</span> <span class=mi>2</span><span class=p>,</span> <span class=mi>3</span><span class=p>];</span> <span class=c1>// 超级不可理喻
+</span></span></span><span class=line><span class=cl><span class=c1>//a = 1
+</span></span></span><span class=line><span class=cl><span class=c1>//b = [2, 3]
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=c1>//字符串etc
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kd>let</span> <span class=p>[</span><span class=nx>a</span><span class=p>,</span> <span class=nx>b</span><span class=p>,</span> <span class=nx>c</span><span class=p>,</span> <span class=nx>d</span><span class=p>,</span> <span class=nx>e</span><span class=p>]</span> <span class=o>=</span> <span class=s1>&#39;hello&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=c1>// a = &#39;h&#39;
+</span></span></span><span class=line><span class=cl><span class=c1>// b = &#39;e&#39;
+</span></span></span><span class=line><span class=cl><span class=c1>// c = &#39;l&#39;
+</span></span></span><span class=line><span class=cl><span class=c1>// d = &#39;l&#39;
+</span></span></span><span class=line><span class=cl><span class=c1>// e = &#39;o&#39;
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=kd>let</span> <span class=p>[</span><span class=nx>a</span> <span class=o>=</span> <span class=mi>2</span><span class=p>]</span> <span class=o>=</span> <span class=p>[</span><span class=kc>undefined</span><span class=p>];</span>
+</span></span><span class=line><span class=cl> <span class=c1>// a = 2
+</span></span></span></code></pre></td></tr></table></div></div><ol start=2><li>对象解构</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kd>let</span> <span class=p>{</span> <span class=nx>foo</span><span class=p>,</span> <span class=nx>bar</span> <span class=p>}</span> <span class=o>=</span> <span class=p>{</span> <span class=nx>foo</span><span class=o>:</span> <span class=s1>&#39;aaa&#39;</span><span class=p>,</span> <span class=nx>bar</span><span class=o>:</span> <span class=s1>&#39;bbb&#39;</span> <span class=p>};</span>
+</span></span><span class=line><span class=cl><span class=c1>// foo = &#39;aaa&#39;
+</span></span></span><span class=line><span class=cl><span class=c1>// bar = &#39;bbb&#39;
+</span></span></span><span class=line><span class=cl><span class=c1></span> 
+</span></span><span class=line><span class=cl><span class=kd>let</span> <span class=p>{</span> <span class=nx>baz</span> <span class=o>:</span> <span class=nx>foo</span> <span class=p>}</span> <span class=o>=</span> <span class=p>{</span> <span class=nx>baz</span> <span class=o>:</span> <span class=s1>&#39;ddd&#39;</span> <span class=p>};</span>
+</span></span><span class=line><span class=cl><span class=c1>// foo = &#39;ddd&#39;， baz is not defined
+</span></span></span></code></pre></td></tr></table></div></div><a href=#模板字符串><h2 id=模板字符串><span class=hanchor arialabel=Anchor># </span>模板字符串</h2></a><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=c1>//创建模板字符串
+</span></span></span><span class=line><span class=cl><span class=c1>//模板字符串可以解析变量
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kd>let</span> <span class=nx>name</span> <span class=o>=</span> <span class=s1>&#39;tim&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=kd>let</span> <span class=nx>text</span> <span class=o>=</span> <span class=sb>`</span><span class=si>${</span><span class=nx>name</span><span class=si>}</span><span class=sb>roy`</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>text</span><span class=p>);</span><span class=c1>//timroy
+</span></span></span></code></pre></td></tr></table></div></div><a href=#对象属性的简写><h2 id=对象属性的简写><span class=hanchor arialabel=Anchor># </span>对象属性的简写</h2></a><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kd>let</span> <span class=nx>name</span> <span class=o>=</span> <span class=s1>&#39;zhangsan&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=kd>let</span> <span class=nx>clog</span> <span class=o>=</span> <span class=kd>function</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=s1>&#39;shuchu&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// 属性名和变量名相同
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kd>let</span> <span class=nx>obj</span> <span class=o>=</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=nx>name</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=nx>clog</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=nx>add</span><span class=p>(</span><span class=nx>num1</span><span class=p>,</span> <span class=nx>num2</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=nx>num1</span> <span class=o>+</span> <span class=nx>num2</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// 效果相同的写法
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kd>let</span> <span class=nx>obj2</span> <span class=o>=</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=nx>name</span><span class=o>:</span> <span class=nx>name</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=nx>clog</span><span class=o>:</span> <span class=nx>clog</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=nx>add</span><span class=o>:</span> <span class=kd>function</span><span class=p>(</span><span class=nx>num1</span><span class=p>,</span> <span class=nx>num2</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>        <span class=k>return</span> <span class=nx>num1</span> <span class=o>+</span> <span class=nx>num2</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nx>obj</span><span class=p>.</span><span class=nx>clog</span><span class=p>();</span> <span class=c1>// shuchu
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>obj</span><span class=p>.</span><span class=nx>name</span><span class=p>,</span> <span class=nx>obj</span><span class=p>.</span><span class=nx>add</span><span class=p>(</span><span class=mi>1</span><span class=p>,</span> <span class=mi>2</span><span class=p>));</span> <span class=c1>// zhangsan 3
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>obj2</span><span class=p>.</span><span class=nx>clog</span><span class=p>();</span> <span class=c1>// shuchu
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>obj2</span><span class=p>.</span><span class=nx>name</span><span class=p>,</span> <span class=nx>obj2</span><span class=p>.</span><span class=nx>add</span><span class=p>(</span><span class=mi>1</span><span class=p>,</span> <span class=mi>2</span><span class=p>));</span> <span class=c1>// zhangsan 3
+</span></span></span></code></pre></td></tr></table></div></div><a href=#箭头函数><h2 id=箭头函数><span class=hanchor arialabel=Anchor># </span>箭头函数</h2></a><p><code>() => {}</code></p><p>使用箭头函数的注意事项</p><ol><li>返回一个对象怎么书写</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=c1>// 因为对象的{}会被解析成代码块的{},所以我们使用()包裹这个对象
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kr>const</span> <span class=nx>fn</span> <span class=o>=</span> <span class=p>()</span> <span class=p>=&gt;</span> <span class=p>({</span><span class=nx>a</span><span class=o>:</span><span class=mi>1</span><span class=p>});</span>
+</span></span><span class=line><span class=cl><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>fn</span><span class=p>());</span>
+</span></span></code></pre></td></tr></table></div></div><ol start=2><li>箭头函数没有this</li><li>箭头函数不能使用new实例化对象：箭头函数原型上没有<code>constructor</code>属性，不能用来实例化</li><li>箭头函数不能使用arguments对象</li><li>call/apply/bind方法无法改变箭头函数中this的指向</li><li>箭头函数没有原型对象</li><li>不能使用new.target</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=c1>// 经典面试题，错误案例验证箭头函数没有this,用的是上下文的this,这个面试题的关键在于对象没有作用域。
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=kd>var</span> <span class=nx>obj</span> <span class=o>=</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=nx>name</span><span class=o>:</span> <span class=s1>&#39;刘德华&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>	<span class=nx>age</span><span class=o>:</span> <span class=mi>18</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>	<span class=nx>say</span><span class=o>:</span> <span class=p>()</span> <span class=p>=&gt;</span> <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=k>this</span><span class=p>.</span><span class=nx>age</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nx>obj</span><span class=p>.</span><span class=nx>say</span><span class=p>();</span>
+</span></span><span class=line><span class=cl><span class=cm>/* 对象没有作用域，而对象又定义在全局上，所以say箭头函数的this是
+</span></span></span><span class=line><span class=cl><span class=cm>window,window对象没有age属性，所以输出undefined */</span>
+</span></span><span class=line><span class=cl><span class=nb>window</span><span class=p>.</span><span class=nx>age</span> <span class=o>=</span> <span class=mi>20</span>
+</span></span><span class=line><span class=cl><span class=nx>obj</span><span class=p>.</span><span class=nx>say</span><span class=p>();</span><span class=c1>//20
+</span></span></span></code></pre></td></tr></table></div></div><a href=#函数参数的默认值><h2 id=函数参数的默认值><span class=hanchor arialabel=Anchor># </span>函数参数的默认值</h2></a><ol><li>ES6允许函数给参数赋初始值</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kd>function</span> <span class=nx>add</span><span class=p>(</span><span class=nx>a</span><span class=p>,</span><span class=nx>b</span><span class=p>,</span><span class=nx>c</span><span class=o>=</span><span class=mi>10</span><span class=p>)</span> <span class=p>{</span> <span class=c1>// 给c赋初始值10
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=k>return</span> <span class=nx>a</span> <span class=o>+</span> <span class=nx>b</span> <span class=o>+</span> <span class=nx>c</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=kd>let</span> <span class=nx>result</span> <span class=o>=</span> <span class=nx>add</span><span class=p>(</span><span class=mi>1</span><span class=p>,</span><span class=mi>2</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>result</span><span class=p>);</span> <span class=c1>//13
+</span></span></span></code></pre></td></tr></table></div></div><ol start=2><li>与解构赋值结合</li></ol><a href=#剩余参数><h2 id=剩余参数><span class=hanchor arialabel=Anchor># </span>剩余参数</h2></a><p>ES6引入<code>rest</code>参数，用于获取函数的实参，用来代替<code>arguments</code></p><ol><li>两种获取实参的方式</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=c1>// ES5
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kd>function</span> <span class=nx>date</span><span class=p>(){</span>
+</span></span><span class=line><span class=cl><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>arguments</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=nx>date</span><span class=p>(</span><span class=s1>&#39;a&#39;</span><span class=p>,</span><span class=s1>&#39;b&#39;</span><span class=p>,</span><span class=s1>&#39;c&#39;</span><span class=p>)</span> <span class=c1>//Arguments结果是一个对象而不是一个数组
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=c1>// ES6
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=kd>function</span> <span class=nx>fn</span><span class=p>(){</span>
+</span></span><span class=line><span class=cl><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>args</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=nx>fn</span><span class=p>(</span><span class=s1>&#39;a&#39;</span><span class=p>,</span><span class=s1>&#39;b&#39;</span><span class=p>,</span><span class=s1>&#39;c&#39;</span><span class=p>)</span> <span class=c1>//结果是一个数组，可以使用一些数组的处理方法比如filter，some，every，map
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=c1>// rest参数必须放在参数最后
+</span></span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=cm>/* 剩余参数(...变量名)允许我们将不定量的参数表示为一个数组 */</span>
+</span></span><span class=line><span class=cl><span class=kd>function</span> <span class=nx>fn</span><span class=p>(</span><span class=nx>first</span><span class=p>,...</span><span class=nx>args</span><span class=p>){</span>
+</span></span><span class=line><span class=cl>	<span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>first</span><span class=p>);</span><span class=c1>//1
+</span></span></span><span class=line><span class=cl><span class=c1></span>	<span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>args</span><span class=p>);</span><span class=c1>//[2,3,4]
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=nx>fn</span><span class=p>(</span><span class=mi>1</span><span class=p>,</span><span class=mi>2</span><span class=p>,</span><span class=mi>3</span><span class=p>,</span><span class=mi>4</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=cm>/* 箭头函数中没有arguments对象，所以只能用剩余参数来存储多于的参数 */</span>
+</span></span><span class=line><span class=cl><span class=kr>const</span> <span class=nx>sum</span> <span class=o>=</span> <span class=p>(...</span><span class=nx>args</span><span class=p>)</span> <span class=p>=&gt;</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=kd>let</span> <span class=nx>total</span> <span class=o>=</span> <span class=mi>0</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>	<span class=nx>args</span><span class=p>.</span><span class=nx>forEach</span><span class=p>(</span><span class=nx>item</span> <span class=p>=&gt;</span> <span class=nx>total</span> <span class=o>+=</span> <span class=nx>item</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>	<span class=k>return</span> <span class=nx>total</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=nx>sum</span><span class=p>(</span><span class=mi>1</span><span class=p>,</span><span class=mi>2</span><span class=p>,</span><span class=mi>3</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=nx>sum</span><span class=p>(</span><span class=mi>1</span><span class=p>,</span><span class=mi>2</span><span class=p>,</span><span class=mi>3</span><span class=p>,</span><span class=mi>4</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// 剩余参数和解构赋值搭配使用
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kd>let</span> <span class=nx>arr</span> <span class=o>=</span> <span class=p>[</span><span class=mi>1</span><span class=p>,</span><span class=mi>2</span><span class=p>,</span><span class=mi>3</span><span class=p>];</span>
+</span></span><span class=line><span class=cl><span class=kd>let</span> <span class=p>[</span><span class=nx>first</span><span class=p>,...</span><span class=nx>last</span><span class=p>]</span> <span class=o>=</span> <span class=nx>arr</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>first</span><span class=p>);</span><span class=c1>//1
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>last</span><span class=p>);</span><span class=c1>//[2,3]
+</span></span></span></code></pre></td></tr></table></div></div><a href=#扩展运算符><h2 id=扩展运算符><span class=hanchor arialabel=Anchor># </span>扩展运算符</h2></a><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kd>let</span> <span class=nx>arr</span> <span class=o>=</span> <span class=p>[</span><span class=mi>1</span><span class=p>,</span><span class=mi>2</span><span class=p>,</span><span class=mi>3</span><span class=p>,</span><span class=mi>4</span><span class=p>,</span><span class=mi>5</span><span class=p>];</span><span class=c1>//...arr 就是1,2,3,4,5
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(...</span><span class=nx>arr</span><span class=p>);</span><span class=c1>//12345 log函数将逗号作为分隔符了
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kd>let</span> <span class=nx>obj1</span> <span class=o>=</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=nx>name1</span><span class=o>:</span> <span class=s1>&#39;刘德华&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>	<span class=nx>age1</span><span class=o>:</span> <span class=mi>18</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kd>let</span> <span class=nx>obj2</span> <span class=o>=</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=nx>name2</span><span class=o>:</span> <span class=s1>&#39;张学友&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>	<span class=nx>age2</span><span class=o>:</span> <span class=mi>19</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>	<span class=p>...</span><span class=nx>obj1</span><span class=p>,</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>obj2</span><span class=p>);</span><span class=c1>//{name2: &#34;张学友&#34;, age2: 19, name1: &#34;刘德华&#34;, age1: 18}
+</span></span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=c1>// 2、拓展运算符可以用来合并数组
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kd>let</span> <span class=nx>arr1</span> <span class=o>=</span> <span class=p>[</span><span class=mi>1</span><span class=p>,</span><span class=mi>2</span><span class=p>,</span><span class=mi>3</span><span class=p>,</span><span class=mi>4</span><span class=p>,</span><span class=mi>5</span><span class=p>];</span><span class=c1>//...arr1 就是1,2,3,4,5
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kd>let</span> <span class=nx>arr2</span> <span class=o>=</span> <span class=p>[</span><span class=mi>6</span><span class=p>,</span><span class=mi>7</span><span class=p>,</span><span class=mi>8</span><span class=p>];</span>
+</span></span><span class=line><span class=cl><span class=kd>let</span> <span class=nx>arr3</span> <span class=o>=</span> <span class=p>[...</span><span class=nx>arr1</span><span class=p>,...</span><span class=nx>arr2</span><span class=p>];</span>
+</span></span><span class=line><span class=cl><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>arr3</span><span class=p>);</span><span class=c1>//[1,2,3,4,5,6,7,8]
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kd>let</span> <span class=nx>arr4</span> <span class=o>=</span> <span class=p>[</span><span class=nx>arr1</span><span class=p>,</span><span class=nx>arr2</span><span class=p>]</span>
+</span></span><span class=line><span class=cl><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>arr4</span><span class=p>)</span> <span class=c1>//[Array(5), Array(3)]
+</span></span></span></code></pre></td></tr></table></div></div><p><img src=https://raw.githubusercontent.com/Meyerclex/image/main/20220906162906.png width=auto alt></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=c1>// 3、遍历数组将伪数组变成真正的数组
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=o>&lt;</span><span class=nx>body</span><span class=o>&gt;</span>
+</span></span><span class=line><span class=cl><span class=o>&lt;</span><span class=nx>div</span><span class=o>&gt;&lt;</span><span class=err>/div&gt;&lt;div&gt;&lt;/div&gt;&lt;div&gt;&lt;/div&gt;&lt;div&gt;&lt;/div&gt;&lt;div&gt;&lt;/div&gt;&lt;div&gt;&lt;/div&gt;</span>
+</span></span><span class=line><span class=cl><span class=o>&lt;</span><span class=nx>script</span><span class=o>&gt;</span>
+</span></span><span class=line><span class=cl><span class=err>​</span>	<span class=kd>var</span> <span class=nx>divs</span> <span class=o>=</span> <span class=nb>document</span><span class=p>.</span><span class=nx>getElementsByTagName</span><span class=p>(</span><span class=s1>&#39;div&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=err>​</span>	<span class=kd>var</span> <span class=nx>arr</span> <span class=o>=</span> <span class=p>[...</span><span class=nx>divs</span><span class=p>];</span>
+</span></span><span class=line><span class=cl><span class=err>​</span>	<span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>arr</span><span class=p>);</span><span class=c1>//[div, div, div, div, div, div]
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=o>&lt;</span><span class=err>/script&gt;</span>
+</span></span><span class=line><span class=cl><span class=o>&lt;</span><span class=err>/body&gt;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// 4、克隆数组		
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kd>let</span> <span class=nx>arr1</span> <span class=o>=</span> <span class=p>[</span><span class=mi>1</span><span class=p>,</span><span class=mi>2</span><span class=p>,</span><span class=mi>3</span><span class=p>,</span><span class=mi>4</span><span class=p>,</span><span class=mi>5</span><span class=p>];</span>
+</span></span><span class=line><span class=cl><span class=kd>let</span> <span class=nx>arr2</span> <span class=o>=</span> <span class=p>[...</span><span class=nx>arr1</span><span class=p>];</span>
+</span></span><span class=line><span class=cl><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>arr2</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=cm>/* 合并对象时，出现同名的属性，书写在后面的属性值将替换
+</span></span></span><span class=line><span class=cl><span class=cm>前面的同名属性的属性值,数组却不会，因为两个数组合并下标肯定
+</span></span></span><span class=line><span class=cl><span class=cm>会冲突，因此js底层做了处理 */</span>
+</span></span><span class=line><span class=cl><span class=kd>let</span> <span class=nx>obj1</span> <span class=o>=</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=nx>sex</span><span class=o>:</span> <span class=s2>&#34;男&#34;</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kd>let</span> <span class=nx>obj2</span> <span class=o>=</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=nx>sex</span><span class=o>:</span> <span class=s2>&#34;nan&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=p>...</span><span class=nx>obj1</span><span class=p>,</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kd>let</span> <span class=nx>obj3</span> <span class=o>=</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=p>...</span><span class=nx>obj1</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=nx>sex</span><span class=o>:</span> <span class=s2>&#34;nan&#34;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>obj2</span><span class=p>);</span> <span class=c1>// { sex: &#39;男&#39; }
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>obj3</span><span class=p>);</span> <span class=c1>// { sex: &#39;nan&#39; }
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=kd>let</span> <span class=nx>arr1</span> <span class=o>=</span> <span class=p>[</span><span class=mi>1</span><span class=p>,</span> <span class=mi>2</span><span class=p>,</span> <span class=mi>3</span><span class=p>,</span> <span class=mi>4</span><span class=p>,</span> <span class=mi>5</span><span class=p>,</span> <span class=mi>6</span><span class=p>];</span>
+</span></span><span class=line><span class=cl><span class=kd>let</span> <span class=nx>arr2</span> <span class=o>=</span> <span class=p>[</span><span class=mi>5</span><span class=p>,</span> <span class=mi>6</span><span class=p>,</span> <span class=mi>7</span><span class=p>,</span> <span class=mi>8</span><span class=p>];</span>
+</span></span><span class=line><span class=cl><span class=kd>let</span> <span class=nx>arr3</span> <span class=o>=</span> <span class=p>[...</span><span class=nx>arr1</span><span class=p>,</span> <span class=p>...</span><span class=nx>arr2</span><span class=p>];</span>
+</span></span><span class=line><span class=cl><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>arr3</span><span class=p>);</span> <span class=c1>// [1, 2, 3, 4, 5, 6, 5, 6, 7, 8]
+</span></span></span></code></pre></td></tr></table></div></div><a href=#symbol><h2 id=symbol><span class=hanchor arialabel=Anchor># </span>Symbol</h2></a><p>Symbol 值作为对象属性名时，不能用点运算符。在对象的内部，使用 Symbol 值定义属性时，Symbol 值必须放在方括号之中。</p><a href=#垃圾回收机制><h2 id=垃圾回收机制><span class=hanchor arialabel=Anchor># </span>垃圾回收机制</h2></a><ol><li>什么是垃圾回收机制</li><li>内存的生命周期</li><li>垃圾回收算法说明<ol><li>引用计数：存在嵌套引用的问题。如果两个对象相互引用，尽管他们已不再使用，垃圾回收器不会进行回收，导致内存泄漏。<ol><li><img src=https://raw.githubusercontent.com/Meyerclex/image/main/20220907115046.png width=auto alt></li></ol></li><li>标记清除法</li></ol></li></ol><p><img src=https://raw.githubusercontent.com/Meyerclex/image/main/20220907111454.png width=auto alt>
+<img src=https://raw.githubusercontent.com/Meyerclex/image/main/20220907111647.png width=auto alt>
+<img src=https://raw.githubusercontent.com/Meyerclex/image/main/20220907112250.png width=auto alt>
+<img src=https://raw.githubusercontent.com/Meyerclex/image/main/20220907115252.png width=auto alt>
+<img src=https://raw.githubusercontent.com/Meyerclex/image/main/20220907115432.png width=auto alt></p><a href=#闭包-closure><h2 id=闭包-closure><span class=hanchor arialabel=Anchor># </span>闭包 Closure</h2></a><p>一个函数对周围状态的引用捆绑在一起，内层函数中方位到其外层函数的作用域。
+简单理解：闭包 = 内层函数 + 外层函数的变量</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kd>function</span> <span class=nx>outer</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=kr>const</span> <span class=nx>a</span> <span class=o>=</span> <span class=mi>1</span>
+</span></span><span class=line><span class=cl>	<span class=kd>function</span> <span class=nx>f</span><span class=p>()</span> <span class=p>{</span> <span class=c1>// 内层函数
+</span></span></span><span class=line><span class=cl><span class=c1></span>	<span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>a</span><span class=p>)</span> <span class=c1>// 内层函数用到了外层函数的变量a
+</span></span></span><span class=line><span class=cl><span class=c1></span>	<span class=p>}</span>
+</span></span><span class=line><span class=cl>	<span class=nx>f</span><span class=p>()</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=nx>outer</span><span class=p>()</span>
+</span></span></code></pre></td></tr></table></div></div><p>闭包作用：封闭数据，提供操作，外部也可以访问函数内部的变量。</p><p>闭包基本格式：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kd>function</span> <span class=nx>outer</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=kd>let</span> <span class=nx>i</span> <span class=o>=</span> <span class=mi>1</span>
+</span></span><span class=line><span class=cl>	<span class=kd>function</span> <span class=nx>fn</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>i</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>	<span class=p>}</span>
+</span></span><span class=line><span class=cl>	<span class=k>return</span> <span class=nx>fn</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=c1>// outer() === fn() === function fn() {}
+</span></span></span><span class=line><span class=cl><span class=c1>// const fun = function fn() { } 
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kr>const</span> <span class=nx>fun</span> <span class=o>=</span> <span class=nx>outer</span><span class=p>()</span>
+</span></span><span class=line><span class=cl><span class=nx>fun</span><span class=p>()</span> <span class=c1>//1
+</span></span></span><span class=line><span class=cl><span class=c1>//外层函数使用内部函数的变量
+</span></span></span></code></pre></td></tr></table></div></div><p>闭包应用：实现数据的私有。比如要做一个统计函数调用次数的函数：</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=kd>let</span> <span class=nx>count</span> <span class=o>=</span> <span class=mi>1</span>
+</span></span><span class=line><span class=cl><span class=kd>function</span> <span class=nx>fn</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=nx>count</span><span class=o>++</span>
+</span></span><span class=line><span class=cl>	<span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=sb>`调用</span><span class=si>${</span><span class=nx>count</span><span class=si>}</span><span class=sb>次`</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=nx>fn</span><span class=p>()</span> <span class=c1>//2
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>fn</span><span class=p>()</span> <span class=c1>//3
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>count</span> <span class=o>=</span> <span class=mi>1000</span>
+</span></span><span class=line><span class=cl><span class=nx>fn</span><span class=p>()</span> <span class=c1>// 1001
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=c1>// 闭包形式:
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=kd>function</span> <span class=nx>count2</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=kd>let</span> <span class=nx>i</span> <span class=o>=</span> <span class=mi>0</span>
+</span></span><span class=line><span class=cl>	<span class=kd>function</span> <span class=nx>fn</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>		<span class=nx>i</span><span class=o>++</span>
+</span></span><span class=line><span class=cl>		<span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>i</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>	<span class=p>}</span>
+</span></span><span class=line><span class=cl>	<span class=k>return</span> <span class=nx>fn</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=kr>const</span> <span class=nx>fun</span> <span class=o>=</span> <span class=nx>count2</span><span class=p>()</span>
+</span></span><span class=line><span class=cl><span class=nx>fun</span><span class=p>()</span> <span class=c1>// 1
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=nx>i</span> <span class=o>=</span> <span class=mi>1000</span>
+</span></span><span class=line><span class=cl><span class=nx>fun</span><span class=p>()</span> <span class=c1>//2
+</span></span></span></code></pre></td></tr></table></div></div><p><img src=https://raw.githubusercontent.com/Meyerclex/image/main/20220907144739.png width=auto alt></p><a href=#变量提升><h2 id=变量提升><span class=hanchor arialabel=Anchor># </span>变量提升</h2></a><p>当代码执行之前先检测所有<code>var</code>声明的变量，然后提升到<strong>当前作用域</strong>的最前面。只提升声明，不提升赋值。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>num</span> <span class=o>+</span> <span class=s1>&#39;件&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=kd>var</span> <span class=nx>num</span> 
+</span></span><span class=line><span class=cl><span class=c1>// undefined件
+</span></span></span></code></pre></td></tr></table></div></div><p><img src=https://raw.githubusercontent.com/Meyerclex/image/main/20220907145448.png width=auto alt></p><a href=#函数提升><h2 id=函数提升><span class=hanchor arialabel=Anchor># </span>函数提升</h2></a><ol><li>会把所有函数声明提升到当前作用域的最前面。</li><li>只提升函数声明，不提升函数调用。函数表达式不存在提升现象。</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span><span class=lnt>9
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=line><span class=cl><span class=nx>fn</span><span class=p>()</span>
+</span></span><span class=line><span class=cl><span class=kd>function</span> <span class=nx>fn</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>	<span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=s1>&#39;函数提升&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=p>}</span> <span class=c1>// 函数提升
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=nx>fun</span><span class=p>()</span>
+</span></span><span class=line><span class=cl><span class=kd>var</span> <span class=nx>fun</span> <span class=o>=</span> <span class=kd>function</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl><span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=s1>&#39;函数表达式&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=p>}</span><span class=c1>//报错，因为不提升赋值。函数表达式不存在提升现象
+</span></span></span></code></pre></td></tr></table></div></div><a href=#动态参数><h2 id=动态参数><span class=hanchor arialabel=Anchor># </span>动态参数</h2></a><p><code>arguments</code>是函数内部内置的伪数组变量，它包含了调用函数时传入的所有实参。</p></article><hr><div class=page-end id=footer><div class=backlinks-container><h3>Backlinks</h3><ul class=backlinks><li><a href=/ data-ctx=ES6 data-src=/ class=internal-link>Archive | Lyin's Room</a></li></ul></div><div><script src=https://cdn.jsdelivr.net/npm/d3@6.7.0/dist/d3.min.js integrity="sha256-+7jaYCp29O1JusNWHaYtgUn6EhuP0VaFuswhNV06MyI=" crossorigin=anonymous></script><h3>Interactive Graph</h3><div id=graph-container></div><style>:root{--g-node:var(--secondary);--g-node-active:var(--primary);--g-node-inactive:var(--visited);--g-link:var(--outlinegray);--g-link-active:#5a7282}</style><script src=https://c.gregueria.icu/js/graph.abd4bc2af3869a96524d7d23b76152c7.js></script></div></div><div id=contact_buttons><footer><p>Made by Lyin using <a href=https://github.com/jackyzha0/quartz>Quartz</a>, © 2022</p><ul><li><a href=https://c.gregueria.icu/>Home</a></li><li><a href=https://gregueria.icu>Sooo long and Thanks for All the fish :p</a></li></ul></footer></div></div></body></html>
