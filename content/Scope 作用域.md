@@ -21,4 +21,5 @@ tags:
 
 ## Scope chain 作用域链
 - 根据内部函数可以访问外部函数变量的这种机制，用链式查找决定哪些数据能被内部函数访问，就成为作用域链。
-- 
+- ![](https://raw.githubusercontent.com/Meyerclex/image/main/20220907110924.png)
+- ![](https://raw.githubusercontent.com/Meyerclex/image/main/20220907111027.png)
