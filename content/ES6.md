@@ -128,7 +128,25 @@ let { foo, bar } = { foo: 'aaa', bar: 'bbb' };
 let { baz : foo } = { baz : 'ddd' };
 // foo = 'ddd'， baz is not defined
 
+const obj = {name: 'tim', age: 18}
+// obj.name , obj.age
+const {uname, age} = {name: 'tim', age: 18}
+//等价于 const uname = obj.name
+console.log(uname) //tim
+console.log(age)//18
+//省略了obj.
 ```
+对象解构的变量名可以重新改名：
+```js
+const obj = {uname: 'tim', age: 18}
+const {uname: username, age} = obj 
+console.log(username)
+console.log(uname) // undefined
+
+```
+要点在于括号结构正确。
+![](https://raw.githubusercontent.com/Meyerclex/image/main/20220907163832.png)
+![](https://raw.githubusercontent.com/Meyerclex/image/main/20220907165148.png)
 
 ## 模板字符串
 ```js
@@ -172,9 +190,7 @@ console.log(obj2.name, obj2.add(1, 2)); // zhangsan 3
 ```
 
 ## 箭头函数
-`() => {}`
-
-使用箭头函数的注意事项
+`() => {}`，箭头函数适用于那些本来要写**匿名函数**的地方。使用箭头函数的注意事项：
 1. 返回一个对象怎么书写
 ```js
 // 因为对象的{}会被解析成代码块的{},所以我们使用()包裹这个对象
@@ -216,7 +232,12 @@ console.log(result); //13
 ```
 
 2. 与解构赋值结合
-## 剩余参数
+## 动态参数 arguments
+`arguments`是函数内部内置的伪数组变量，它包含了调用函数时传入的所有实参。
+1. 是一个伪数组，只存在于函数中
+2. 作用是动态获取函数的实参
+3. 可以通过for循环依次得到传递过来的实参
+## 剩余参数 rest
 ES6引入`rest`参数，用于获取函数的实参，用来代替`arguments`
 1. 两种获取实参的方式
 ```js
@@ -261,7 +282,8 @@ console.log(last);//[2,3]
 
 ```
 
-## 扩展运算符
+## 扩展/展开运算符
+典型运用场景：求数组最大/小值、合并数组等
 ```js
 let arr = [1,2,3,4,5];//...arr 就是1,2,3,4,5
 console.log(...arr);//12345 log函数将逗号作为分隔符了
@@ -350,6 +372,7 @@ Symbol 值作为对象属性名时，不能用点运算符。在对象的内部�
 ![](https://raw.githubusercontent.com/Meyerclex/image/main/20220907115432.png)
 ## 闭包 Closure
 一个函数对周围状态的引用捆绑在一起，内层函数中方位到其外层函数的作用域。
+
 简单理解：闭包 = 内层函数 + 外层函数的变量
 ```js
 function outer() {
@@ -434,5 +457,4 @@ console.log('函数表达式')
 }//报错，因为不提升赋值。函数表达式不存在提升现象
 ```
 
-## 动态参数
-`arguments`是函数内部内置的伪数组变量，它包含了调用函数时传入的所有实参。
+
